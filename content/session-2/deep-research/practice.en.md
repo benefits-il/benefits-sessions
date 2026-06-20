@@ -14,7 +14,7 @@ What is worth having open: a Claude account, and access to at least one more res
 
 In every tool this feature hides in a slightly different place, but it usually sits in the chat window, inside the menu that opens from the plus button (+). In most tools it is called Deep Research, and in Claude it is actually called Research. When you open a new tool, look for it there.
 
-It is also worth telling apart two kinds of tools. There are tools that only search the internet and bring back sources quickly, like DeepSeek, Grok, and Arena. And there are tools that do real Deep Research, meaning they build a plan, go out to search in depth, and synthesize a cited report, like Claude, Gemini, and Perplexity. We will use both kinds: the quick search is good for a fast check, and Deep Research for real research.
+It is also worth telling apart two kinds of tools. There are tools that only search the internet and bring back sources quickly, like DeepSeek, Grok, and Arena. And there are tools that do real Deep Research, meaning they build a plan, go out to search in depth, and synthesize a cited report, like Claude, ChatGPT, Gemini, and Perplexity. We will use both kinds: the quick search is good for a fast check, and Deep Research for real research.
 
 ---
 
