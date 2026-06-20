@@ -3,6 +3,8 @@ type: learning-chapter
 unit: deep-research
 session: 2
 phase: הכנה
+num: "2.5"
+globalIndex: 8
 parent: content/session-2/deep-research/index.html
 parentLabel: Deep Research
 title: כשה-AI עובד בשבילכם חצי שעה

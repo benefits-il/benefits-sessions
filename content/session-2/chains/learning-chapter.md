@@ -3,6 +3,8 @@ type: learning-chapter
 unit: chains
 session: 2
 phase: הכנה
+num: "2.4"
+globalIndex: 7
 parent: content/session-2/chains/index.html
 parentLabel: שרשור סוכנים
 title: כשסוכן אחד לא מספיק

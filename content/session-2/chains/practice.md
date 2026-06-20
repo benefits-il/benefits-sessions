@@ -3,6 +3,8 @@ type: practice
 unit: chains
 session: 2
 phase: הכנה
+num: "2.4"
+globalIndex: 7
 parent: content/session-2/chains/index.html
 parentLabel: שרשור סוכנים
 title: תרגול — שרשור סוכנים
@@ -10,7 +12,6 @@ studio: [Index]
 video: baSn1qXMeYw
 downloads: [{"label":"תמלול הפגישה","href":"meeting-transcript.md"},{"label":"מאגר הצמדים","href":"agent-pairs-menu.md"}]
 links: [{"label":"סגננו שם לסוכן","href":"https://benefits-il.dev/agent-names/"}]
-next: {"label":"פרק למידה מלא","href":"viewer.html?doc=content/session-2/chains/learning-chapter.md&title=שרשור סוכנים — פרק למידה מלא"}
 ---
 
 # תרגול — שרשור סוכנים

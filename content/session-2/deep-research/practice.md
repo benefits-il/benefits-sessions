@@ -3,14 +3,15 @@ type: practice
 unit: deep-research
 session: 2
 phase: הכנה
+num: "2.5"
+globalIndex: 8
 parent: content/session-2/deep-research/index.html
 parentLabel: Deep Research
 title: תרגול — Deep Research
 studio: [Scout]
-video: TBD
+video: C8fuafuVgeY
 downloads: [{"label":"research-architect (הסקיל)","href":"https://benefits-il.dev/orbit-plugin/research-architect.zip"}]
 links: [{"label":"Claude","href":"https://claude.ai"},{"label":"Gemini","href":"https://gemini.google.com/app"},{"label":"Perplexity","href":"https://perplexity.ai"},{"label":"DeepSeek","href":"https://chat.deepseek.com"},{"label":"Grok","href":"https://grok.com"},{"label":"Arena","href":"https://lmarena.ai"}]
-next: {"label":"פרק למידה מלא","href":"viewer.html?doc=content/session-2/deep-research/learning-chapter.md&title=Deep Research — פרק למידה מלא"}
 ---
 
 # תרגול — Deep Research

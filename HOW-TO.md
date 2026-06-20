@@ -45,7 +45,7 @@ video: baSn1qXMeYw
 ## תרחיש 3 — להוסיף יחידה חדשה למפגש קיים
 
 1. צור תיקייה `content/session-N/<unit-slug>/` (ה-slug באנגלית, למשל `chains`).
-2. צור בתוכה `practice.md` ו-`learning-chapter.md` עם frontmatter מלא — **הכי קל להעתיק יחידה קיימת ולשנות**. שדות חובה: `type`, `title`, `session`, `unit`, `phase`, `parent`, `parentLabel`, `studio`; לתרגול גם `video`, `downloads`, `links`.
+2. צור בתוכה שלושה קבצים עם frontmatter מלא — **הכי קל להעתיק יחידה קיימת ולשנות**: עמוד-תוכן (`practice.md` להכנה/בית או `class.md` לכיתה), `summary.md`, ו-`learning-chapter.md`. שדות חובה: `type`, `title`, `session`, `unit`, `phase`, `parent`, `parentLabel`, `studio`, `num` (גלוי "שיעור.יחידה"), `globalIndex` (נסתר); לתרגול גם `video`, `downloads`, `links`. **שלושת הקבצים חובה** — בלוק הסיכום plus פרק-הלמידה שבתחתית כל עמוד-תוכן נשען על `summary.md` ו-`learning-chapter.md` באותה תיקייה.
 3. העתק לתיקייה את קבצי ההורדה (תמלול / מאגר / PDF) שה-`downloads` מצביע אליהם.
 4. צור `index.html` (hub) בהעתקת hub קיים. עדכן כותרת, chip STUDIO, ושני הקישורים. **שמור על הכלל הקבוע:** התרגול הוא הקישור הראשי למעלה; פרק הלמידה יושב בתחתית בתוך `<div class="chapter-aside">` בשם "פרק למידה מלא".
 5. הוסף כרטיס `unit-card` לעמוד המפגש (`session-N.html`) ברצועה הנכונה (הכנה / בכיתה / בבית).

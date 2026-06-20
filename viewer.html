@@ -30,13 +30,17 @@
 <main class="wrap" id="main">
   <nav class="breadcrumb" id="crumb" hidden></nav>
   <div class="page-head" id="phead" hidden></div>
+  <div id="copySlot"></div>
   <div id="videoSlot"></div>
   <div id="dlSlot"></div>
   <article class="sheet md" id="sheet" hidden></article>
   <div id="linksSlot"></div>
+  <div id="contSlot"></div>
   <div id="navSlot"></div>
   <div id="fallbackSlot"></div>
 </main>
+
+<div class="toast" id="toast"><i class="ti ti-check"></i> <span id="toastMsg"></span></div>
 
 <input type="file" id="filePick" accept=".md,.markdown,.txt" style="display:none;">
 
@@ -94,7 +98,7 @@
   }
 
   /* ---------- chrome builders ---------- */
-  const HERE_LABEL = { practice:'תרגול', 'learning-chapter':'פרק למידה' };
+  const HERE_LABEL = { practice:'תרגול', 'learning-chapter':'פרק למידה', class:'בכיתה', summary:'סיכום' };
   function el(html){ const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstChild; }
 
   function buildCrumb(meta){
@@ -136,15 +140,15 @@
       return `https://www.youtube-nocookie.com/embed/${v}?rel=0&hl=he&cc_lang_pref=he&cc_load_policy=1`;
     return v;
   }
+  function videoFrame(v){
+    return `<div class="media-bleed"><div class="video-frame"><iframe src="${ytEmbed(v)}" title="סרטון היחידה" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div>`;
+  }
   function buildVideo(meta){
     if (meta.type !== 'practice') return;
     const slot = document.getElementById('videoSlot');
     const v = meta.video;
-    if (v && v !== 'TBD'){
-      slot.innerHTML = `<div class="media-bleed"><div class="video-frame"><iframe src="${ytEmbed(v)}" title="סרטון היחידה" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div>`;
-    } else {
-      slot.innerHTML = `<div class="media-bleed"><div class="video-frame"><div class="video-play"><i class="ti ti-player-play-filled"></i></div><span class="video-soon">סרטון היחידה — בקרוב</span></div></div>`;
-    }
+    if (v && v !== 'TBD') slot.innerHTML = videoFrame(v);
+    else slot.innerHTML = `<div class="media-bleed"><div class="video-frame"><div class="video-play"><i class="ti ti-player-play-filled"></i></div><span class="video-soon">סרטון היחידה — בקרוב</span></div></div>`;
   }
 
   function buildDownloads(meta){
@@ -174,17 +178,81 @@
     slot.innerHTML = h;
   }
 
+  /* ---------- toast ---------- */
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.setAttribute('data-show','true');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => t.removeAttribute('data-show'), 1600);
+  }
+
+  /* ---------- copy-to-Notion (summary / learning-chapter pages) ---------- */
+  function buildCopyAll(meta, body){
+    if (meta.type !== 'summary' && meta.type !== 'learning-chapter') return;
+    const slot = document.getElementById('copySlot');
+    slot.innerHTML =
+      '<div class="downloads-row">' +
+        '<button class="btn-secondary btn-sm" id="copyNotion" type="button"><i class="ti ti-copy"></i> העתק לנושן</button>' +
+        (doc ? `<a class="btn-ghost btn-sm" href="${doc}" download>הורדה <i class="ti ti-download"></i></a>` : '') +
+      '</div>';
+    const btn = document.getElementById('copyNotion');
+    if (btn) btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(body || sheet.innerText)
+        .then(() => showToast('הועתק — אפשר להדביק בנושן'));
+    });
+  }
+
+  /* ---------- continuation block (practice / class pages) ----------
+     Appends, below a separator, the unit's short summary + full learning
+     chapter — view links + downloads, both copyable to Notion. Sibling
+     summary.md / learning-chapter.md are auto-derived from the doc folder
+     (override with meta.summaryDoc / meta.chapterDoc). */
+  function buildContinuation(meta){
+    if (meta.type !== 'practice' && meta.type !== 'class') return;
+    if (!doc) return;
+    const folder = doc.slice(0, doc.lastIndexOf('/') + 1);
+    const sumPath = meta.summaryDoc || (folder + 'summary.md');
+    const chPath  = meta.chapterDoc || (folder + 'learning-chapter.md');
+    const name = meta.parentLabel || meta.title || 'היחידה';
+    document.getElementById('contSlot').innerHTML =
+      '<div class="chapter-aside">' +
+        '<div class="kicker" style="margin-block-end:12px">להמשך הלמידה</div>' +
+        `<a class="page-link-card" href="viewer.html?doc=${sumPath}&title=${name} — סיכום">` +
+          '<span class="pl-ic"><i class="ti ti-file-text"></i></span>' +
+          '<div><h3>סיכום קצר</h3><p>התקציר של היחידה. אפשר להעתיק לנושן.</p></div>' +
+          '<i class="pl-go ti ti-chevron-left"></i>' +
+        '</a>' +
+        `<a class="page-link-card" href="viewer.html?doc=${chPath}&title=${name} — פרק למידה מלא" style="margin-block-start:13px">` +
+          '<span class="pl-ic"><i class="ti ti-book"></i></span>' +
+          '<div><h3>פרק למידה מלא</h3><p>כל החומר של היחידה, לקריאה ולהעתקה לנושן.</p></div>' +
+          '<i class="pl-go ti ti-chevron-left"></i>' +
+        '</a>' +
+        '<div class="downloads-row" style="margin-block-start:13px">' +
+          '<span class="dl-lab">להורדה:</span>' +
+          `<a class="btn-secondary btn-sm" href="${sumPath}" download>סיכום <i class="ti ti-download"></i></a>` +
+          `<a class="btn-secondary btn-sm" href="${chPath}" download>פרק למידה מלא <i class="ti ti-download"></i></a>` +
+        '</div>' +
+      '</div>';
+  }
+
   /* ---------- render ---------- */
   function renderMarkdown(text, sourceLabel){
     const { meta, body } = parseFrontmatter(text);
     if (titleParam && !meta.title) meta.title = titleParam;
 
+    document.getElementById('copySlot').innerHTML = '';
+    document.getElementById('contSlot').innerHTML = '';
+
     buildCrumb(meta);
     buildHead(meta);
+    buildCopyAll(meta, body);
     buildVideo(meta);
     buildDownloads(meta);
 
-    sheet.innerHTML = marked.parse(body);
+    // inline videos: [[video:ID]] in the body → embedded player (same frame as the top slot)
+    const bodyWithVideos = body.replace(/\[\[video:([\w-]{11})\]\]/g, (_, id) => videoFrame(id));
+    sheet.innerHTML = marked.parse(bodyWithVideos);
     sheet.hidden = false;
     if (meta.type === 'learning-chapter') sheet.classList.add('unit-reading');
 
@@ -229,6 +297,7 @@
 
     buildLinks(meta);
     buildNav(meta);
+    buildContinuation(meta);
 
     // direction
     const dir = detectDir(body);
