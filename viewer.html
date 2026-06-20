@@ -30,6 +30,7 @@
 <main class="wrap" id="main">
   <nav class="breadcrumb" id="crumb" hidden></nav>
   <div class="page-head" id="phead" hidden></div>
+  <div id="langSlot"></div>
   <div id="copySlot"></div>
   <div id="videoSlot"></div>
   <div id="dlSlot"></div>
@@ -236,28 +237,23 @@
       '</div>';
   }
 
-  /* ---------- render ---------- */
-  function renderMarkdown(text, sourceLabel){
-    const { meta, body } = parseFrontmatter(text);
-    if (titleParam && !meta.title) meta.title = titleParam;
-
-    document.getElementById('copySlot').innerHTML = '';
-    document.getElementById('contSlot').innerHTML = '';
-
-    buildCrumb(meta);
-    buildHead(meta);
-    buildCopyAll(meta, body);
-    buildVideo(meta);
-    buildDownloads(meta);
-
+  /* ---------- body render (shared pipeline for both languages) ----------
+     Renders a markdown body string into #sheet (marked + mermaid + highlight +
+     copy buttons + relative link/image resolution) and returns the leading H1
+     text after stripping it (used as the page title). The chrome around the
+     body is built once, in Hebrew, by renderMarkdown — this only touches #sheet. */
+  function renderBody(bodyText){
     // inline videos: [[video:ID]] in the body → embedded player (same frame as the top slot)
-    const bodyWithVideos = body.replace(/\[\[video:([\w-]{11})\]\]/g, (_, id) => videoFrame(id));
+    const bodyWithVideos = bodyText.replace(/\[\[video:([\w-]{11})\]\]/g, (_, id) => videoFrame(id));
     sheet.innerHTML = marked.parse(bodyWithVideos);
     sheet.hidden = false;
-    if (meta.type === 'learning-chapter') sheet.classList.add('unit-reading');
 
-    // the classification header already shows the title — drop a duplicate leading H1
-    if (sheet.firstElementChild && sheet.firstElementChild.tagName === 'H1') sheet.firstElementChild.remove();
+    // the classification header already shows the title — capture then drop a duplicate leading H1
+    let leadH1 = null;
+    if (sheet.firstElementChild && sheet.firstElementChild.tagName === 'H1'){
+      leadH1 = sheet.firstElementChild.textContent;
+      sheet.firstElementChild.remove();
+    }
 
     // mermaid: convert ```mermaid fences → <div class="mermaid">
     let mid = 0;
@@ -295,16 +291,93 @@
     const nodes = sheet.querySelectorAll('.mermaid');
     if (nodes.length){ try { mermaid.run({ nodes }); } catch(e){} }
 
+    return leadH1;
+  }
+
+  /* ---------- language toggle (practice / class pages that declare meta.en) ----------
+     Switches the ARTICLE BODY, the PAGE TITLE and the TEXT DIRECTION only — all the
+     structural chrome (kicker, breadcrumb, STUDIO chip, video, downloads, continuation)
+     stays Hebrew. The choice is persisted in localStorage so the site follows the learner. */
+  let pageMeta = null, heBodyText = '', heDir = 'rtl', enText = null;
+  function pheadTitleEl(){ return document.querySelector('#phead h1'); }
+  function markLang(lang){
+    document.querySelectorAll('#langSlot .lang-btn').forEach(b => {
+      const on = b.dataset.lang === lang;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+  function setLang(lang){
+    if (!pageMeta || !pageMeta.en) return;
+    if (lang === 'en'){
+      const get = enText != null
+        ? Promise.resolve(enText)
+        : fetch(resolveHref(pageMeta.en))
+            .then(r => { if (!r.ok) throw new Error('http ' + r.status); return r.text(); })
+            .then(t => (enText = t));
+      get.then(t => {
+        const h1 = renderBody(t);
+        sheet.setAttribute('dir', 'ltr');
+        const title = h1 || pageMeta.title || '';
+        const ph = pheadTitleEl(); if (ph) ph.textContent = title;
+        document.title = 'Benefits · ' + (title || 'מסמך');
+        markLang('en');
+        try { localStorage.setItem('benefits-lang', 'en'); } catch(e){}
+      }).catch(() => { markLang('he'); });   // English file unreachable → stay on Hebrew
+    } else {
+      renderBody(heBodyText);
+      sheet.setAttribute('dir', heDir);
+      const ph = pheadTitleEl(); if (ph) ph.textContent = pageMeta.title || '';
+      document.title = 'Benefits · ' + (pageMeta.title || 'מסמך');
+      markLang('he');
+      try { localStorage.setItem('benefits-lang', 'he'); } catch(e){}
+    }
+  }
+  function buildLangToggle(meta){
+    const slot = document.getElementById('langSlot');
+    slot.innerHTML = '';
+    if (!meta.en || (meta.type !== 'practice' && meta.type !== 'class')) return;
+    slot.innerHTML =
+      '<div class="lang-toggle" role="group" aria-label="שפת העמוד">' +
+        '<button type="button" class="lang-btn is-active" data-lang="he" aria-pressed="true">עברית</button>' +
+        '<button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>' +
+      '</div>';
+    slot.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  }
+
+  /* ---------- render ---------- */
+  function renderMarkdown(text, sourceLabel){
+    const { meta, body } = parseFrontmatter(text);
+    if (titleParam && !meta.title) meta.title = titleParam;
+
+    document.getElementById('copySlot').innerHTML = '';
+    document.getElementById('contSlot').innerHTML = '';
+    document.getElementById('langSlot').innerHTML = '';
+
+    buildCrumb(meta);
+    buildHead(meta);
+    buildCopyAll(meta, body);
+    buildVideo(meta);
+    buildDownloads(meta);
+
+    // body — Hebrew is the default — through the shared pipeline
+    renderBody(body);
+    if (meta.type === 'learning-chapter') sheet.classList.add('unit-reading');
+    const dir = detectDir(body);
+    sheet.setAttribute('dir', dir);
+
     buildLinks(meta);
     buildNav(meta);
     buildContinuation(meta);
 
-    // direction
-    const dir = detectDir(body);
-    sheet.setAttribute('dir', dir);
-
     document.title = 'Benefits · ' + (meta.title || 'מסמך');
     document.getElementById('fallbackSlot').innerHTML = '';
+
+    // language toggle + restore the learner's saved choice across the site
+    pageMeta = meta; heBodyText = body; heDir = dir; enText = null;
+    buildLangToggle(meta);
+    let saved = null; try { saved = localStorage.getItem('benefits-lang'); } catch(e){}
+    if (saved === 'en' && meta.en && (meta.type === 'practice' || meta.type === 'class')) setLang('en');
   }
 
   /* ---------- fallback (file:// can't fetch) ---------- */

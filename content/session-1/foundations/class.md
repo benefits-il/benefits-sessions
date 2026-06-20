@@ -9,7 +9,7 @@ parent: content/session-1/foundations/index.html
 parentLabel: יסודות
 studio: [Target]
 title: בכיתה — יסודות
-downloads: [{"label":"English","href":"class.en.md"}]
+en: class.en.md
 ---
 
 ## כתיבה מחדש של פרומפט חלש באמצעות חמשת מרכיבי MICRO

@@ -10,7 +10,7 @@ parentLabel: Connectors
 studio: [Unify, Operate]
 title: תרגול — Connectors
 video: jyUANo5zRpQ
-downloads: [{"label":"English","href":"practice.en.md"}]
+en: practice.en.md
 ---
 
 ## חברו כלי אחד, ותנו לקלוד לעבוד

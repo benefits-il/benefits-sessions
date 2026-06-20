@@ -9,7 +9,7 @@ parent: content/session-2/meta-agents/index.html
 parentLabel: מטא-סוכנים
 studio: [Index]
 title: בכיתה — מטא-סוכנים
-downloads: [{"label":"English","href":"class.en.md"}]
+en: class.en.md
 ---
 
 ## ✏️ הזינו את המתודולוגיה, אתגרו אותה, והריצו את המחקר

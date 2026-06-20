@@ -77,12 +77,20 @@ You got a table that sums up the whole tool landscape, from the research you ran
 
 And now open at least five of the tools, and save them in a favorites folder named "Deep Research" in your browser, so you have them on hand in one place. A few tools are accessible without registration or with a quick registration:
 
-- **Do real Deep Research:** [Claude](https://claude.ai) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai).
-- **Quick internet search:** [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://lmarena.ai).
+- **Do real Deep Research:** [Claude](https://claude.ai) · [ChatGPT](https://chatgpt.com) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai).
+- **Quick internet search:** [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://arena.ai).
+
+---
+
+## More tools to explore, if you feel like it
+
+Want to look further out? There is a whole other layer of tools that know how to search and research, some of them names you probably have not met. None of them are needed to finish the exercise — this is simply the full map, if you feel like wandering through it. These are the tools I roam among myself:
+
+[Jina](https://search.jina.ai/) · [Consensus](https://consensus.app/) · [Elicit](https://elicit.com/) · [Undermind](https://app.undermind.ai/) · [Semantic Scholar](https://www.semanticscholar.org/) · [SciSpace](https://scispace.com/) · [Scite](https://scite.ai/) · [You.com](https://you.com/home) · [Exa](https://exa.ai/) · [Perplexity](https://www.perplexity.ai/) · [DeepSeek](https://chat.deepseek.com/) · [Grok](https://grok.com/) · [Mistral](https://chat.mistral.ai/chat) · [Qwen](https://chat.qwen.ai/) · [MiniMax](https://agent.minimax.io/) · [Claude](https://claude.ai/new) · [Gemini](https://gemini.google.com/app) · [Arena](https://arena.ai/) · [NotebookLM](https://notebooklm.google.com/) · [ChatGPT](https://chatgpt.com/)
 
 ---
 
 ## Materials and links
 
 - **research-architect** — [download only the Skill](https://benefits-il.dev/orbit-plugin/research-architect.zip).
-- **The tools:** [Claude](https://claude.ai) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai) · [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://lmarena.ai).
+- **The tools:** [Claude](https://claude.ai) · [ChatGPT](https://chatgpt.com) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai) · [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://arena.ai).

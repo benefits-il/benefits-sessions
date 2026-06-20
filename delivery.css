@@ -205,6 +205,15 @@ a.page-link-card:hover{ transform:translateY(-2px); box-shadow:var(--sh-card-hov
 .downloads-row .dl-lab{ font-family:var(--font-head); font-weight:700; font-size:14px; color:var(--gray-700); }
 .links-row{ display:flex; gap:9px; flex-wrap:wrap; align-items:center; }
 
+/* language toggle (he / en segmented control — practice + class pages) */
+.lang-toggle{ display:inline-flex; gap:4px; padding:4px; margin-block:14px;
+  background:var(--surface-2); border:1.5px solid var(--border-soft); border-radius:var(--r-pill); }
+.lang-btn{ font-family:var(--font-head); font-weight:700; font-size:14px; line-height:1; cursor:pointer;
+  padding:7px 16px; border:0; border-radius:var(--r-pill); background:transparent; color:var(--depth);
+  transition:background var(--m-quick), color var(--m-quick), box-shadow var(--m-quick); }
+.lang-btn:hover{ background:var(--soft); }
+.lang-btn.is-active,.lang-btn.is-active:hover{ background:var(--anchor); color:var(--cream); box-shadow:0 2px 0 0 var(--darker); }
+
 /* video slot */
 .video-frame{ aspect-ratio:16/9; border-radius:var(--r-lg); background:#06281f; border:2px solid var(--ink);
   box-shadow:var(--sh-card); display:grid; place-items:center; color:var(--cream); position:relative; overflow:hidden; }

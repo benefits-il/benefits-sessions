@@ -10,8 +10,9 @@ parentLabel: Deep Research
 title: תרגול — Deep Research
 studio: [Scout]
 video: C8fuafuVgeY
-downloads: [{"label":"research-architect (הסקיל)","href":"https://benefits-il.dev/orbit-plugin/research-architect.zip"},{"label":"English","href":"practice.en.md"}]
-links: [{"label":"Claude","href":"https://claude.ai"},{"label":"Gemini","href":"https://gemini.google.com/app"},{"label":"Perplexity","href":"https://perplexity.ai"},{"label":"DeepSeek","href":"https://chat.deepseek.com"},{"label":"Grok","href":"https://grok.com"},{"label":"Arena","href":"https://lmarena.ai"}]
+downloads: [{"label":"research-architect (הסקיל)","href":"https://benefits-il.dev/orbit-plugin/research-architect.zip"}]
+en: practice.en.md
+links: [{"label":"Claude","href":"https://claude.ai"},{"label":"ChatGPT","href":"https://chatgpt.com"},{"label":"Gemini","href":"https://gemini.google.com/app"},{"label":"Perplexity","href":"https://perplexity.ai"},{"label":"DeepSeek","href":"https://chat.deepseek.com"},{"label":"Grok","href":"https://grok.com"},{"label":"Arena","href":"https://arena.ai"}]
 ---
 
 # תרגול — Deep Research
@@ -90,12 +91,20 @@ Research אמיתי או רק חיפוש באינטרנט, מה ייחודי ב�
 
 ועכשיו פתחו לפחות חמישה מהכלים, ושמרו אותם בתיקיית מועדפים בשם "Deep Research" בדפדפן, כדי שיהיו לכם ביד במקום אחד. כמה כלים נגישים בלי הרשמה או בהרשמה מהירה:
 
-- **עושים Deep Research אמיתי:** [Claude](https://claude.ai) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai).
-- **חיפוש מהיר באינטרנט:** [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://lmarena.ai).
+- **עושים Deep Research אמיתי:** [Claude](https://claude.ai) · [ChatGPT](https://chatgpt.com) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai).
+- **חיפוש מהיר באינטרנט:** [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://arena.ai).
+
+---
+
+## עוד כלים לחקור, אם בא לכם
+
+רוצים להציץ רחוק יותר? יש עוד שכבה שלמה של כלים שיודעים לחפש ולחקור, חלקם שמות שכנראה לא פגשתם. שום דבר מהם לא נדרש כדי לסיים את התרגיל ← זאת פשוט המפה המלאה, אם בא לכם לשוטט בה. אלה הכלים שאני עצמי מסתובב ביניהם:
+
+[Jina](https://search.jina.ai/) · [Consensus](https://consensus.app/) · [Elicit](https://elicit.com/) · [Undermind](https://app.undermind.ai/) · [Semantic Scholar](https://www.semanticscholar.org/) · [SciSpace](https://scispace.com/) · [Scite](https://scite.ai/) · [You.com](https://you.com/home) · [Exa](https://exa.ai/) · [Perplexity](https://www.perplexity.ai/) · [DeepSeek](https://chat.deepseek.com/) · [Grok](https://grok.com/) · [Mistral](https://chat.mistral.ai/chat) · [Qwen](https://chat.qwen.ai/) · [MiniMax](https://agent.minimax.io/) · [Claude](https://claude.ai/new) · [Gemini](https://gemini.google.com/app) · [Arena](https://arena.ai/) · [NotebookLM](https://notebooklm.google.com/) · [ChatGPT](https://chatgpt.com/)
 
 ---
 
 ## חומרים ולינקים
 
 - **research-architect** — [הורד רק את הסקיל](https://benefits-il.dev/orbit-plugin/research-architect.zip).
-- **הכלים:** [Claude](https://claude.ai) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai) · [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://lmarena.ai).
+- **הכלים:** [Claude](https://claude.ai) · [ChatGPT](https://chatgpt.com) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai) · [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://arena.ai).

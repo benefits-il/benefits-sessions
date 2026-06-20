@@ -9,7 +9,7 @@ parent: content/session-1/skills/index.html
 parentLabel: סקילים
 studio: [Operate]
 title: בכיתה — סקילים
-downloads: [{"label":"English","href":"class.en.md"}]
+en: class.en.md
 ---
 
 ## בנו סקיל בשידור חי, ואז הסתכלו פנימה
