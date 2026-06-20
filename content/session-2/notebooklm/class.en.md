@@ -58,12 +58,12 @@ Now we take that same material and pull four different outputs from it. Each one
 
 ### Mind Map
 
-**Where to paste:** the Mind Map is a button in the Studio that is built on its own from all the sources, with no prompt field. Click it in the Studio and you get the whole tool landscape as a visual map of topics and sub-topics; clicking a topic inside the map drops a question into the chat. For a text version that will help you read it, paste this into the chat:
+**Where to paste:** in the Studio, choose Mind Map, and in the Customize field paste this instruction before you generate. The map is built from all the sources in the notebook, and clicking a topic inside it drops a question into the chat.
 
 ```
-סדרו לי את כל החומר שבמחברת כמפה של נושאים ותתי-נושאים: קודם סוגי הכלים
-(Deep Research אמיתי מול חיפוש מהיר), ותחת כל סוג, הכלים עצמם והמאפיין המרכזי
-של כל אחד. רק מהמקורות שבמחברת, בעברית.
+בנו מפת חשיבה מכל המקורות שבמחברת: קודם סוגי הכלים (Deep Research אמיתי מול
+חיפוש מהיר), ותחת כל סוג, הכלים עצמם והמאפיין המרכזי של כל אחד. בעברית,
+רק מהמקורות שבמחברת.
 ```
 
 **Editor's eye:** the hierarchy and the grouping are the gift here, they show you the whole research without reading ten pages. Ignore a branch that repeats itself, or a single node that is detached from the rest.
