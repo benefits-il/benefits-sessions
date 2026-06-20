@@ -9,6 +9,7 @@ parent: content/session-2/notebooklm/index.html
 parentLabel: NotebookLM
 studio: [Scout, Target]
 title: בכיתה — NotebookLM
+downloads: [{"label":"English","href":"class.en.md"}]
 ---
 
 ## ✏️ מחברת ראשונה ב-NotebookLM

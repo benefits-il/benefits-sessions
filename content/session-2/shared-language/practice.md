@@ -10,6 +10,7 @@ parentLabel: שפה משותפת
 studio: [Unify, Index]
 title: תרגול — שפה משותפת
 video: h6Dus_MBQYQ
+downloads: [{"label":"English","href":"practice.en.md"}]
 ---
 
 ## ✏️ תורידו את הכלי שמקל על ה-AI

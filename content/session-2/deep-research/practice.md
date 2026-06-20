@@ -10,7 +10,7 @@ parentLabel: Deep Research
 title: תרגול — Deep Research
 studio: [Scout]
 video: C8fuafuVgeY
-downloads: [{"label":"research-architect (הסקיל)","href":"https://benefits-il.dev/orbit-plugin/research-architect.zip"}]
+downloads: [{"label":"research-architect (הסקיל)","href":"https://benefits-il.dev/orbit-plugin/research-architect.zip"},{"label":"English","href":"practice.en.md"}]
 links: [{"label":"Claude","href":"https://claude.ai"},{"label":"Gemini","href":"https://gemini.google.com/app"},{"label":"Perplexity","href":"https://perplexity.ai"},{"label":"DeepSeek","href":"https://chat.deepseek.com"},{"label":"Grok","href":"https://grok.com"},{"label":"Arena","href":"https://lmarena.ai"}]
 ---
 

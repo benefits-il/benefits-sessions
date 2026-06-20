@@ -10,7 +10,7 @@ parentLabel: שרשור סוכנים
 title: תרגול — שרשור סוכנים
 studio: [Index]
 video: baSn1qXMeYw
-downloads: [{"label":"תמלול הפגישה","href":"meeting-transcript.md"},{"label":"מאגר הצמדים","href":"agent-pairs-menu.md"}]
+downloads: [{"label":"תמלול הפגישה","href":"meeting-transcript.md"},{"label":"מאגר הצמדים","href":"agent-pairs-menu.md"},{"label":"English","href":"practice.en.md"},{"label":"English transcript","href":"meeting-transcript.en.md"},{"label":"English pairs menu","href":"agent-pairs-menu.en.md"}]
 links: [{"label":"סגננו שם לסוכן","href":"https://benefits-il.dev/agent-names/"}]
 ---
 

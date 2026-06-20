@@ -9,6 +9,7 @@ parent: content/session-1/agents/index.html
 parentLabel: סוכנים
 studio: [Operate]
 title: בכיתה — סוכנים
+downloads: [{"label":"English","href":"class.en.md"}]
 ---
 
 ## הסוכן הראשון שלכם

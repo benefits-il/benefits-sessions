@@ -9,6 +9,7 @@ parent: content/session-2/memory-layers/index.html
 parentLabel: שכבות זיכרון
 studio: [Unify, Operate]
 title: בכיתה — שכבות זיכרון
+downloads: [{"label":"English","href":"class.en.md"}]
 ---
 
 ## סיימו את Benefit, והתקינו את שני הסקילים הנותרים

@@ -10,6 +10,7 @@ parentLabel: נושן
 studio: [Index, Operate]
 title: תרגול — נושן
 video: RmuqtOe8YGE
+downloads: [{"label":"English","href":"practice.en.md"}]
 ---
 
 ## שומרים עמוד אחד במחברת, ידנית
