@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Benefits · הקורס</title>
+<link rel="icon" type="image/png" href="benefits-icon-256.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Rubik:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<link rel="stylesheet" href="delivery.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__logo"><img src="benefits-logo.svg" alt="Benefits"></span>
+      <span><span class="brand__name">Benefits</span><br><span class="brand__sub">אתר הקורס</span></span>
+    </a>
+    <a class="back" id="backLink" href="sessions.html"><i class="ti ti-arrow-right" aria-hidden="true"></i> חזרה</a>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <nav class="breadcrumb" id="crumb" hidden></nav>
+  <div class="page-head" id="phead" hidden></div>
+  <div id="videoSlot"></div>
+  <div id="dlSlot"></div>
+  <article class="sheet md" id="sheet" hidden></article>
+  <div id="linksSlot"></div>
+  <div id="navSlot"></div>
+  <div id="fallbackSlot"></div>
+</main>
+
+<input type="file" id="filePick" accept=".md,.markdown,.txt" style="display:none;">
+
+<script>
+  const params = new URLSearchParams(location.search);
+  if (params.get('embed')) document.getElementById('topbar').style.display = 'none';
+  const doc = params.get('doc');
+  const titleParam = params.get('title');
+
+  const sheet = document.getElementById('sheet');
+  const filePick = document.getElementById('filePick');
+
+  marked.setOptions({ gfm: true, breaks: false });
+  mermaid.initialize({
+    startOnLoad: false, securityLevel: 'loose', theme: 'base',
+    fontFamily: "'Varela Round', sans-serif",
+    themeVariables: {
+      primaryColor: '#D1FAE5', primaryTextColor: '#064E3B', primaryBorderColor: '#047857',
+      lineColor: '#047857', secondaryColor: '#FEF3C7', tertiaryColor: '#FFFBEB',
+      noteBkgColor: '#FEF3C7', noteTextColor: '#064E3B', fontSize: '15px'
+    }
+  });
+
+  /* ---------- frontmatter ---------- */
+  function parseVal(val){
+    if (val === '') return '';
+    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) return val.slice(1,-1);
+    if (val.startsWith('[') && val.endsWith(']')){
+      try { return JSON.parse(val); } catch(e){}
+      const inner = val.slice(1,-1).trim();
+      if (!inner) return [];
+      return inner.split(',').map(s => s.trim().replace(/^["']|["']$/g,''));
+    }
+    if (val.startsWith('{') && val.endsWith('}')){ try { return JSON.parse(val); } catch(e){} }
+    return val;
+  }
+  function parseFrontmatter(md){
+    const m = md.match(/^\s*---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+    if (!m) return { meta:{}, body:md };
+    const meta = {};
+    m[1].split(/\r?\n/).forEach(line => {
+      if (!line.trim() || /^\s*#/.test(line)) return;
+      const i = line.indexOf(':');
+      if (i < 0) return;
+      meta[line.slice(0,i).trim()] = parseVal(line.slice(i+1).trim());
+    });
+    return { meta, body: md.slice(m[0].length) };
+  }
+
+  /* ---------- direction ---------- */
+  function detectDir(text){
+    const heb = (text.match(/[֐-׿]/g) || []).length;
+    const lat = (text.match(/[A-Za-z]/g) || []).length;
+    return heb >= lat * 0.5 ? 'rtl' : 'ltr';
+  }
+
+  /* ---------- chrome builders ---------- */
+  const HERE_LABEL = { practice:'תרגול', 'learning-chapter':'פרק למידה' };
+  function el(html){ const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstChild; }
+
+  function buildCrumb(meta){
+    const c = document.getElementById('crumb');
+    const here = HERE_LABEL[meta.type] || (meta.title || 'מסמך');
+    let h = '<a href="sessions.html">הקורס</a><span class="sep">/</span>';
+    if (meta.session) h += `<a href="session-${meta.session}.html">מפגש ${meta.session}</a><span class="sep">/</span>`;
+    if (meta.parent && meta.parentLabel) h += `<a href="${meta.parent}">${meta.parentLabel}</a><span class="sep">/</span>`;
+    h += `<span class="here">${here}</span>`;
+    c.innerHTML = h; c.hidden = false;
+    const back = document.getElementById('backLink');
+    if (meta.parent) back.setAttribute('href', meta.parent);
+    else if (meta.session) back.setAttribute('href', `session-${meta.session}.html`);
+  }
+
+  function studioChips(meta){
+    const arr = Array.isArray(meta.studio) ? meta.studio : (meta.studio ? [meta.studio] : []);
+    return arr.map(s => `<span class="chip chip-studio"><i class="ti ti-stack-2"></i> STUDIO · ${s}</span>`).join('');
+  }
+  function buildHead(meta){
+    const p = document.getElementById('phead');
+    const kickParts = [];
+    if (meta.parentLabel) kickParts.push(meta.parentLabel);
+    if (meta.session) kickParts.push('מפגש ' + meta.session);
+    if (meta.phase) kickParts.push(meta.phase);
+    const kicker = kickParts.join(' · ');
+    p.innerHTML =
+      (kicker ? `<div class="kicker">${kicker}</div>` : '') +
+      `<h1>${meta.title || ''}</h1>` +
+      `<div class="head-chips">${studioChips(meta)}</div>`;
+    p.hidden = false;
+  }
+
+  function resolveHref(href){ try { return new URL(href, new URL(doc, location.href)).href; } catch(e){ return href; } }
+
+  function ytEmbed(v){
+    if (/^https?:\/\//i.test(v)) return v;                 // full URL → as-is
+    if (/^[\w-]{11}$/.test(v))                              // bare YouTube id → nocookie + Hebrew captions
+      return `https://www.youtube-nocookie.com/embed/${v}?rel=0&hl=he&cc_lang_pref=he&cc_load_policy=1`;
+    return v;
+  }
+  function buildVideo(meta){
+    if (meta.type !== 'practice') return;
+    const slot = document.getElementById('videoSlot');
+    const v = meta.video;
+    if (v && v !== 'TBD'){
+      slot.innerHTML = `<div class="media-bleed"><div class="video-frame"><iframe src="${ytEmbed(v)}" title="סרטון היחידה" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div>`;
+    } else {
+      slot.innerHTML = `<div class="media-bleed"><div class="video-frame"><div class="video-play"><i class="ti ti-player-play-filled"></i></div><span class="video-soon">סרטון היחידה — בקרוב</span></div></div>`;
+    }
+  }
+
+  function buildDownloads(meta){
+    if (!Array.isArray(meta.downloads) || !meta.downloads.length) return;
+    const row = document.getElementById('dlSlot');
+    const btns = meta.downloads.map(d =>
+      `<a class="btn-secondary btn-sm" href="${resolveHref(d.href)}" download>${d.label} <i class="ti ti-download"></i></a>`).join('');
+    row.innerHTML = `<div class="downloads-row"><span class="dl-lab">להורדה:</span>${btns}</div>`;
+  }
+  function buildLinks(meta){
+    if (!Array.isArray(meta.links) || !meta.links.length) return;
+    const row = document.getElementById('linksSlot');
+    const btns = meta.links.map(l => {
+      const ext = /^https?:/i.test(l.href);
+      return `<a class="btn-ghost btn-sm" href="${ext ? l.href : resolveHref(l.href)}"${ext ? ' target="_blank" rel="noopener"' : ''}>${l.label}${ext ? ' <i class="ti ti-external-link"></i>' : ''}</a>`;
+    }).join('');
+    row.innerHTML = `<div class="downloads-row"><span class="dl-lab">לינקים:</span><div class="links-row">${btns}</div></div>`;
+  }
+  function buildNav(meta){
+    if (!meta.prev && !meta.next) return;
+    const slot = document.getElementById('navSlot');
+    let h = '<div class="unit-actions" style="margin-block-start:18px">';
+    if (meta.prev) h += `<a class="btn-ghost btn-sm" href="${meta.prev.href}"><i class="ti ti-chevron-right"></i> ${meta.prev.label}</a>`;
+    h += '<span class="spacer"></span>';
+    if (meta.next) h += `<a class="btn-anchor btn-sm" href="${meta.next.href}">${meta.next.label} <i class="ti ti-chevron-left"></i></a>`;
+    h += '</div>';
+    slot.innerHTML = h;
+  }
+
+  /* ---------- render ---------- */
+  function renderMarkdown(text, sourceLabel){
+    const { meta, body } = parseFrontmatter(text);
+    if (titleParam && !meta.title) meta.title = titleParam;
+
+    buildCrumb(meta);
+    buildHead(meta);
+    buildVideo(meta);
+    buildDownloads(meta);
+
+    sheet.innerHTML = marked.parse(body);
+    sheet.hidden = false;
+    if (meta.type === 'learning-chapter') sheet.classList.add('unit-reading');
+
+    // the classification header already shows the title — drop a duplicate leading H1
+    if (sheet.firstElementChild && sheet.firstElementChild.tagName === 'H1') sheet.firstElementChild.remove();
+
+    // mermaid: convert ```mermaid fences → <div class="mermaid">
+    let mid = 0;
+    sheet.querySelectorAll('pre code.language-mermaid').forEach(block => {
+      const div = document.createElement('div');
+      div.className = 'mermaid'; div.id = 'mmd-' + (mid++);
+      div.textContent = block.textContent;
+      block.closest('pre').replaceWith(div);
+    });
+    // syntax highlight remaining code
+    sheet.querySelectorAll('pre code').forEach(b => { try { hljs.highlightElement(b); } catch(e){} });
+    // copy buttons on remaining code blocks
+    sheet.querySelectorAll('pre').forEach(pre => {
+      const btn = document.createElement('button');
+      btn.className = 'copy'; btn.type = 'button'; btn.textContent = 'העתק';
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(pre.querySelector('code')?.innerText || pre.innerText)
+          .then(() => { btn.textContent = 'הועתק ✓'; setTimeout(() => btn.textContent = 'העתק', 1400); });
+      });
+      pre.appendChild(btn);
+    });
+    // resolve relative links/images against the doc folder
+    if (doc){
+      sheet.querySelectorAll('a[href]').forEach(a => {
+        const h = a.getAttribute('href');
+        if (/^(https?:|mailto:|tel:|#|\/)/i.test(h)) { if (/^https?:/i.test(h)){ a.target='_blank'; a.rel='noopener'; } return; }
+        a.setAttribute('href', resolveHref(h));
+      });
+      sheet.querySelectorAll('img[src]').forEach(img => {
+        const s = img.getAttribute('src');
+        if (!/^(https?:|data:|\/)/i.test(s)) img.setAttribute('src', resolveHref(s));
+      });
+    }
+    // render mermaid
+    const nodes = sheet.querySelectorAll('.mermaid');
+    if (nodes.length){ try { mermaid.run({ nodes }); } catch(e){} }
+
+    buildLinks(meta);
+    buildNav(meta);
+
+    // direction
+    const dir = detectDir(body);
+    sheet.setAttribute('dir', dir);
+
+    document.title = 'Benefits · ' + (meta.title || 'מסמך');
+    document.getElementById('fallbackSlot').innerHTML = '';
+  }
+
+  /* ---------- fallback (file:// can't fetch) ---------- */
+  function showFallback(intendedPath){
+    const fname = intendedPath ? intendedPath.split('/').pop() : '';
+    document.getElementById('fallbackSlot').innerHTML = `
+      <div class="drop" id="drop">
+        <div class="drop__icon"><i class="ti ti-file-text"></i></div>
+        <h2>${titleParam || 'פתיחת מסמך'}</h2>
+        <p>הדפדפן חוסם טעינת קבצים מקומיים. בחרו את הקובץ או גררו אותו לכאן.</p>
+        <button class="btn-anchor" id="pickBtn"><i class="ti ti-folder-open"></i> בחר ${fname ? '«'+fname+'»' : 'קובץ MD'}</button>
+        <div class="serve-note">כדי שהכל ייפתח בלחיצה אחת — הריצו שרת מקומי: <code>npx serve</code> או <code>python -m http.server</code>. (ב-GitHub Pages זה עובד מעצמו.)</div>
+      </div>`;
+    const drop = document.getElementById('drop');
+    document.getElementById('pickBtn').addEventListener('click', () => filePick.click());
+    ['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('is-over'); }));
+    ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('is-over'); }));
+    drop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) readFile(f); });
+  }
+  function readFile(file){ const r = new FileReader(); r.onload = () => renderMarkdown(r.result, file.name); r.readAsText(file, 'utf-8'); }
+  filePick.addEventListener('change', e => { if (e.target.files[0]) readFile(e.target.files[0]); });
+
+  /* ---------- main ---------- */
+  if (!doc){ showFallback(''); }
+  else {
+    fetch(doc)
+      .then(res => { if (!res.ok) throw new Error('http ' + res.status); return res.text(); })
+      .then(text => renderMarkdown(text, decodeURIComponent(doc)))
+      .catch(() => showFallback(doc));
+  }
+</script>
+</body>
+</html>

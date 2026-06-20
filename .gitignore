@@ -1,0 +1,10 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Node (only if a local tool is ever added)
+node_modules/
+
+# local screenshot scratch
+_shots/
