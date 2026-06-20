@@ -148,6 +148,7 @@
     if (meta.type !== 'practice') return;
     const slot = document.getElementById('videoSlot');
     const v = meta.video;
+    if (v === 'none') { slot.innerHTML = ''; return; }   // practice page with no video → no slot at all
     if (v && v !== 'TBD') slot.innerHTML = videoFrame(v);
     else slot.innerHTML = `<div class="media-bleed"><div class="video-frame"><div class="video-play"><i class="ti ti-player-play-filled"></i></div><span class="video-soon">סרטון היחידה — בקרוב</span></div></div>`;
   }
