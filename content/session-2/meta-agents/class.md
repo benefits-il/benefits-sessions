@@ -9,7 +9,6 @@ parent: content/session-2/meta-agents/index.html
 parentLabel: מטא-סוכנים
 studio: [Index]
 title: בכיתה — מטא-סוכנים
-downloads: [{"label":"הפרומפט המכווין","href":"meta-agent-kickoff-brief.md"}]
 en: class.en.md
 ---
 
