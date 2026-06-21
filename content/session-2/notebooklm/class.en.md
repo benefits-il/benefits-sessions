@@ -12,13 +12,13 @@ Remember the big rule from the learning chapter: NotebookLM is a sketch artist, 
 
 2. **Upload the research file** you saved in the home exercise (Claude's and Gemini's reports on the Deep Research tools). Wait for the notebook to finish processing it, that is the vectorize moment.
 
-3. **Switch the output language to Hebrew** in the notebook settings.
+3. **Switch the output language to English** in the notebook settings.
 
 4. **Ask one anchoring question**, say "What is the difference between a tool that does true Deep Research and a tool that only searches the web?", and make sure the answer comes back with a marker pointing to your source. Click it to see where it came from. If there is a source marker, the notebook has caught the material, and you can move on.
 
 ### Do not have the file from home? Build sources now
 
-Open a new notebook, and in the sources panel go to Discover. There you choose Fast (quick, about 10 sources) or Deep Research (deep, about 40 sources), paste one of the prompts, and the sources it finds go straight into the notebook. The prompt is in English because NotebookLM's web search answers best in English, but the outputs later you will ask for in Hebrew.
+Open a new notebook, and in the sources panel go to Discover. There you choose Fast (quick, about 10 sources) or Deep Research (deep, about 40 sources), paste one of the prompts, and the sources it finds go straight into the notebook. The prompt is in English because NotebookLM's web search answers best in English, and the outputs later you will also ask for in English.
 
 For quick sources, paste into Discover → Fast:
 
@@ -50,18 +50,20 @@ Four outputs take time. Open the Studio, start all four one after another, and m
 **Detailed slide deck.** In the Studio, choose Slide deck, and in the Customize field paste:
 
 ```
-מצגת מפורטת בעברית על נוף כלי ה-Deep Research מתוך המקורות שבמחברת: שקף פתיחה,
-שקף לכל כלי עם המאפיין הייחודי שלו והאם הוא עושה מחקר עמוק אמיתי, ושקף סיכום
-עם המלצה מאיזה כלי כדאי להתחיל. רק מהמקורות שבמחברת.
+A detailed slide deck in English on the landscape of Deep Research tools, from the
+sources in the notebook: a title slide, a slide per tool with its unique trait and
+whether it does true deep research, and a summary slide with a recommendation of
+which tool to start with. Only from the sources in the notebook.
 ```
 
-**Editor's eye:** take the slide order and the topic split. Don't send it as-is, in Hebrew errors creep in and the visual comes out generic, you take the idea and rebuild it.
+**Editor's eye:** take the slide order and the topic split. Don't send it as-is, the visual comes out generic, you take the idea and rebuild it.
 
 **Short slide deck.** Make a second deck, this time a summary. Choose Slide deck again, and in the Customize field paste:
 
 ```
-מצגת קצרה בעברית, חמישה עד שישה שקפים בלבד, שמסכמת את ההבדל בין Deep Research
-אמיתי לחיפוש מהיר ואת שניים-שלושה הכלים הבולטים. תמציתי וברור. רק מהמקורות שבמחברת.
+A short slide deck in English, five to six slides only, summarizing the difference
+between true Deep Research and quick search, and the two or three standout tools.
+Concise and clear. Only from the sources in the notebook.
 ```
 
 **Editor's eye:** good as a quick opener. Check that no slide about a tool that was not really in your sources got pushed in.
@@ -69,17 +71,19 @@ Four outputs take time. Open the Studio, start all four one after another, and m
 **Video (Video Overview).** In the Studio, choose Video Overview, and in the Customize field paste:
 
 ```
-סרטון סקירה בעברית שמסביר את נוף כלי ה-Deep Research מתוך המקורות: מה ההבדל בין
-מחקר עמוק אמיתי לחיפוש מהיר, והכלים המרכזיים והייחוד של כל אחד. רק מהמקורות שבמחברת.
+A short overview video in English explaining the landscape of Deep Research tools
+from the sources: the difference between true deep research and quick search, and
+the main tools and what is unique about each. Only from the sources in the notebook.
 ```
 
-**Editor's eye:** good for a general feel and for sharing. The Hebrew narration and captions are not always accurate, so verify a claim before you rely on it.
+**Editor's eye:** good for a general feel and for sharing. The narration and captions are not always accurate, so verify a claim before you rely on it.
 
 **Podcast (Audio Overview).** In the Studio, choose Audio Overview, and in the Customize field paste:
 
 ```
-פודקאסט בעברית, שיחה קלה בין שני מנחים, שעובר על נוף כלי ה-Deep Research מתוך
-המקורות: מה ההבדל בין מחקר עמוק לחיפוש מהיר, ומה ייחודי בכל כלי. רק מהמקורות שבמחברת.
+A podcast in English, a light conversation between two hosts, going over the
+landscape of Deep Research tools from the sources: the difference between deep
+research and quick search, and what is unique about each tool. Only from the sources.
 ```
 
 **Editor's eye:** easy to listen to on the go. Remember it is a source-based conversation, not a source in itself, so verify the facts against the report or the table.
@@ -91,10 +95,11 @@ Now, while those four are cooking in the background, move on to the fast ones.
 **Table (Data table).** In the Studio, choose Data table, and in the Customize field paste the instruction.
 
 ```
-עברו על כל המקורות במחברת והפיקו טבלה אחת מסודרת של כל כלי המחקר שמופיע בהם.
-עמודות: שם הכלי; האם הוא עושה Deep Research אמיתי או רק חיפוש מהיר באינטרנט;
-מה ייחודי בו; והאם הוא דורש הרשמה. כתבו בעברית. בסוף הטבלה, סמנו אילו כלים
-הכי שווה לפתוח קודם. הסתמכו רק על המקורות שבמחברת.
+Go over all the sources in the notebook and produce one organized table in English of
+every research tool that appears in them. Columns: tool name; whether it does true
+Deep Research or only quick web search; what is unique about it; and whether it
+requires sign-up. At the end, mark which tools are most worth opening first. Rely
+only on the sources in the notebook.
 ```
 
 **Editor's eye:** take the column structure and the ordering, they lay out the whole landscape in one glance. Watch for a tool that appears twice, or a tool that was pushed in and was not really in your sources.
@@ -102,9 +107,9 @@ Now, while those four are cooking in the background, move on to the fast ones.
 **Mind Map.** In the Studio, choose Mind Map, and in the Customize field paste the instruction before you generate. Clicking a topic inside the map drops a question into the chat.
 
 ```
-בנו מפת חשיבה מכל המקורות שבמחברת: קודם סוגי הכלים (Deep Research אמיתי מול
-חיפוש מהיר), ותחת כל סוג, הכלים עצמם והמאפיין המרכזי של כל אחד. בעברית,
-רק מהמקורות שבמחברת.
+Build a mind map in English from all the sources in the notebook: first the types of
+tools (true Deep Research vs. quick search), and under each type, the tools themselves
+and the main trait of each. Only from the sources in the notebook.
 ```
 
 **Editor's eye:** the hierarchy and the grouping are the gift here, they show you the whole research without reading ten pages. Ignore a branch that repeats itself, or a single node that is detached from the rest.
@@ -112,19 +117,21 @@ Now, while those four are cooking in the background, move on to the fast ones.
 **Infographic.** In the Studio, choose Infographic, and in the Customize field paste the instruction before you generate.
 
 ```
-אינפוגרפיקה שמשווה את כלי ה-Deep Research מתוך המקורות שבמחברת. חלקו אותה
-לשני חלקים: כלים שעושים Deep Research אמיתי, וכלים של חיפוש מהיר. לכל כלי
-שורה קצרה עם המאפיין הייחודי שלו. בעברית, טקסט קצר וברור. רק מהמקורות.
+An infographic comparing the Deep Research tools from the sources in the notebook.
+Split it into two parts: tools that do true Deep Research, and quick-search tools.
+For each tool, a short line with its unique trait. In English, short and clear text.
+Only from the sources.
 ```
 
-**Editor's eye:** take the split into sections and the visual direction, there is a good idea there for how to arrange it. Do not send it as-is: in Hebrew, spelling errors creep in, sometimes a strange unrelated item gets pushed in, and the visual tends to come out generic. You take the idea, you rebuild the output itself.
+**Editor's eye:** take the split into sections and the visual direction, there is a good idea there for how to arrange it. Do not send it as-is: sometimes a strange unrelated item gets pushed in, and the visual tends to come out generic. You take the idea, you rebuild the output itself.
 
 **Report.** In the Studio, choose Report, and in the Customize field paste the instruction.
 
 ```
-דוח קצר בעברית שמסכם את נוף כלי ה-Deep Research מתוך המקורות: מה ההבדל בין
-מחקר עמוק אמיתי לחיפוש מהיר, סקירה קצרה של כל כלי והייחוד שלו, והמלצה
-מאיזה כלי כדאי להתחיל. רק מהמקורות שבמחברת, עם הפניות למקור.
+A short report in English summarizing the landscape of Deep Research tools from the
+sources: the difference between true deep research and quick search, a short review of
+each tool and what is unique about it, and a recommendation of which tool to start
+with. Only from the sources in the notebook, with source references.
 ```
 
 **Editor's eye:** take the structure and the summary points, they are an excellent starting point. Before you rely on a claim, click the source reference and verify it, because the report is fast but not always accurate.
@@ -132,8 +139,9 @@ Now, while those four are cooking in the background, move on to the fast ones.
 **Flashcards.** In the Studio, choose Flashcards, and in the Customize field paste the instruction.
 
 ```
-כרטיסיות בעברית מתוך המקורות שבמחברת: בכל כרטיס, בצד אחד שם כלי Deep Research,
-ובצד השני המאפיין הייחודי שלו והאם הוא עושה מחקר עמוק אמיתי. רק מהמקורות שבמחברת.
+Flashcards in English from the sources in the notebook: on each card, one side a Deep
+Research tool name, and the other side its unique trait and whether it does true deep
+research. Only from the sources in the notebook.
 ```
 
 **Editor's eye:** good for a quick review of the names and the differences. Make sure no card about a tool that was not in your sources slipped in.
@@ -141,8 +149,9 @@ Now, while those four are cooking in the background, move on to the fast ones.
 **Quiz.** In the Studio, choose Quiz, and in the Customize field paste the instruction.
 
 ```
-בוחן אמריקאי קצר בעברית מתוך המקורות שבמחברת, שבודק את ההבדל בין Deep Research
-אמיתי לחיפוש מהיר ואת הייחוד של כל כלי. רק מהמקורות שבמחברת.
+A short multiple-choice quiz in English from the sources in the notebook, testing the
+difference between true Deep Research and quick search and what is unique about each
+tool. Only from the sources in the notebook.
 ```
 
 **Editor's eye:** good for checking you caught the differences. If a question feels made up, that is a sign the output drifted from the source.

@@ -8,11 +8,11 @@ In class we took the research you brought and produced every kind of output from
 
 1. **Pick a topic** from the list below, or any other that caught your curiosity.
 2. **Open a new notebook** at notebooklm.google.com, and in the sources panel go to Discover and choose Fast. It gathers about ten sources on the topic in under a minute.
-3. **Switch the output language to Hebrew** in the notebook settings, and ask one question about the material. Make sure the answer comes back with a marker pointing to the source.
+3. **Switch the output language to English** in the notebook settings, and ask one question about the material. Make sure the answer comes back with a marker pointing to the source.
 
 ## Step 2 — Run all the outputs, the heavy ones first
 
-Each time, in the Studio, choose the output, and in the Customize field paste the instruction after you swap in [הנושא שבחרתם] (the topic you chose).
+Each time, in the Studio, choose the output, and in the Customize field paste the instruction after you swap in [your chosen topic].
 
 ### First — the heavy ones, kick them off and let them run in the background
 
@@ -21,72 +21,74 @@ Start all four one after another, and move on without waiting.
 **Detailed slide deck.**
 
 ```
-מצגת מפורטת בעברית על [הנושא שבחרתם] מתוך המקורות שבמחברת: שקף פתיחה,
-שקף לכל נקודה מרכזית, ושקף סיכום. רק מהמקורות שבמחברת.
+A detailed slide deck in English on [your chosen topic] from the sources in the
+notebook: a title slide, a slide per main point, and a summary slide. Only from
+the sources in the notebook.
 ```
 
 **Short slide deck.**
 
 ```
-מצגת קצרה בעברית, חמישה עד שישה שקפים בלבד, שמסכמת את עיקרי [הנושא שבחרתם].
-רק מהמקורות שבמחברת.
+A short slide deck in English, five to six slides only, summarizing the essentials
+of [your chosen topic]. Only from the sources in the notebook.
 ```
 
 **Video (Video Overview).**
 
 ```
-סרטון סקירה קצר בעברית על [הנושא שבחרתם] מתוך המקורות: הנקודות המרכזיות בלבד.
-רק מהמקורות שבמחברת.
+A short overview video in English on [your chosen topic] from the sources: the main
+points only. Only from the sources in the notebook.
 ```
 
 **Podcast (Audio Overview).**
 
 ```
-פודקאסט בעברית, שיחה קלה בין שני מנחים, על [הנושא שבחרתם] מתוך המקורות.
-רק מהמקורות שבמחברת.
+A podcast in English, a light conversation between two hosts, on [your chosen topic]
+from the sources. Only from the sources in the notebook.
 ```
 
 ### Then — the fast ones, back almost instantly
 
-**Table (Data table).**
+**Table (Data table).** In the Studio.
 
 ```
-הפיקו טבלה מסודרת בעברית על [הנושא שבחרתם] מתוך המקורות: עמודה לכל היבט מרכזי,
-שורה לכל פריט. רק מהמקורות שבמחברת.
+Produce an organized table in English on [your chosen topic] from the sources:
+a column for each main aspect, a row for each item. Only from the sources in the notebook.
 ```
 
-**Mind Map.**
+**Mind Map.** In the Studio.
 
 ```
-בנו מפת חשיבה בעברית על [הנושא שבחרתם] מתוך המקורות: הנושאים הראשיים,
-ותחת כל אחד הנקודות שלו. רק מהמקורות שבמחברת.
+Build a mind map in English on [your chosen topic] from the sources: the main themes,
+and under each its points. Only from the sources in the notebook.
 ```
 
-**Infographic.**
+**Infographic.** In the Studio.
 
 ```
-אינפוגרפיקה בעברית על [הנושא שבחרתם] מתוך המקורות: טקסט קצר וברור,
-מחולק לכמה חלקים הגיוניים. רק מהמקורות שבמחברת.
+An infographic in English on [your chosen topic] from the sources: short, clear text,
+split into a few logical parts. Only from the sources in the notebook.
 ```
 
-**Report.**
+**Report.** In the Studio.
 
 ```
-דוח קצר בעברית שמסכם את [הנושא שבחרתם] מתוך המקורות, עם הפניות למקור.
-רק מהמקורות שבמחברת.
+A short report in English summarizing [your chosen topic] from the sources, with
+source references. Only from the sources in the notebook.
 ```
 
-**Flashcards.**
+**Flashcards.** In the Studio.
 
 ```
-כרטיסיות בעברית על [הנושא שבחרתם] מתוך המקורות: בכל כרטיס שאלה בצד אחד
-ותשובה קצרה בצד השני. רק מהמקורות שבמחברת.
+Flashcards in English on [your chosen topic] from the sources: each card a question
+on one side and a short answer on the other. Only from the sources in the notebook.
 ```
 
-**Quiz.**
+**Quiz.** In the Studio.
 
 ```
-בוחן אמריקאי קצר בעברית על [הנושא שבחרתם] מתוך המקורות. רק מהמקורות שבמחברת.
+A short multiple-choice quiz in English on [your chosen topic] from the sources.
+Only from the sources in the notebook.
 ```
 
 Look at each one with an editor's eye, exactly as we practiced in class: what to take from it, and what not to. No output is ready to send as-is.
