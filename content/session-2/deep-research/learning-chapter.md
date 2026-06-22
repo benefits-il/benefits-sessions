@@ -10,6 +10,7 @@ parentLabel: Deep Research
 title: כשה-AI עובד בשבילכם חצי שעה
 studio: [Scout]
 downloads: [{"label":"הפרק כקובץ","href":"learning-chapter.md"}]
+en: learning-chapter.en.md
 ---
 
 # כשה-AI עובד בשבילכם חצי שעה

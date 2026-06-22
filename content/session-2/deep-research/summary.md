@@ -9,6 +9,7 @@ parent: content/session-2/deep-research/index.html
 parentLabel: Deep Research
 studio: [Scout]
 title: Deep Research — סיכום
+en: summary.en.md
 ---
 
 # סיכום · Deep Research
