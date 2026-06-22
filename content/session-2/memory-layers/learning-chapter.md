@@ -9,6 +9,7 @@ parent: content/session-2/memory-layers/index.html
 parentLabel: שכבות זיכרון
 studio: [Unify, Operate]
 title: שכבות זיכרון — פרק למידה
+en: learning-chapter.en.md
 ---
 
 # 🧠 שכבות זיכרון: תפסיקו לנסות לגרום ל-AI לזכור, שמרו את הזיכרון בחוץ

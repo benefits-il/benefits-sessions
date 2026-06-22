@@ -295,10 +295,12 @@
     return leadH1;
   }
 
-  /* ---------- language toggle (practice / class pages that declare meta.en) ----------
+  /* ---------- language toggle (practice / class / learning-chapter / summary pages that declare meta.en) ----------
      Switches the ARTICLE BODY, the PAGE TITLE and the TEXT DIRECTION only — all the
      structural chrome (kicker, breadcrumb, STUDIO chip, video, downloads, continuation)
      stays Hebrew. The choice is persisted in localStorage so the site follows the learner. */
+  const LANG_TOGGLE_TYPES = ['practice', 'class', 'learning-chapter', 'summary'];
+  function langToggleEligible(meta){ return !!(meta && meta.en) && LANG_TOGGLE_TYPES.includes(meta.type); }
   let pageMeta = null, heBodyText = '', heDir = 'rtl', enText = null;
   function pheadTitleEl(){ return document.querySelector('#phead h1'); }
   function markLang(lang){
@@ -337,7 +339,7 @@
   function buildLangToggle(meta){
     const slot = document.getElementById('langSlot');
     slot.innerHTML = '';
-    if (!meta.en || (meta.type !== 'practice' && meta.type !== 'class')) return;
+    if (!langToggleEligible(meta)) return;
     slot.innerHTML =
       '<div class="lang-toggle" role="group" aria-label="שפת העמוד">' +
         '<button type="button" class="lang-btn is-active" data-lang="he" aria-pressed="true">עברית</button>' +
@@ -378,7 +380,7 @@
     pageMeta = meta; heBodyText = body; heDir = dir; enText = null;
     buildLangToggle(meta);
     let saved = null; try { saved = localStorage.getItem('benefits-lang'); } catch(e){}
-    if (saved === 'en' && meta.en && (meta.type === 'practice' || meta.type === 'class')) setLang('en');
+    if (saved === 'en' && langToggleEligible(meta)) setLang('en');
   }
 
   /* ---------- fallback (file:// can't fetch) ---------- */
