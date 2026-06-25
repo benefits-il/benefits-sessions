@@ -10,7 +10,7 @@ parentLabel: Cowork
 title: הכנה — Cowork
 studio: [Scout, Unify, Index, Operate]
 video: xoH6zsQaL1U
-status: draft
+status: live
 ---
 
 # הכנה — Cowork

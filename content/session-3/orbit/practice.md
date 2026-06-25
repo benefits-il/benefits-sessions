@@ -10,7 +10,7 @@ parentLabel: ORBIT
 title: הכנה — ORBIT
 studio: [Operate, Index]
 video: none
-status: draft
+status: live
 ---
 
 # הכנה — ORBIT™

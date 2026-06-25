@@ -10,7 +10,7 @@ parentLabel: מה זה Plugin
 title: הכנה — מה זה Plugin
 studio: [Unify, Operate]
 video: DMX81pA1dYE
-status: draft
+status: live
 ---
 
 # הכנה — מה זה Plugin
