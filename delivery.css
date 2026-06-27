@@ -293,9 +293,10 @@ a.page-link-card:hover{ transform:translateY(-2px); box-shadow:var(--sh-card-hov
 .md code{ font-family:'JetBrains Mono', ui-monospace, monospace; font-size:14px; direction:ltr;
   background:var(--mint-pale); color:var(--depth); border:1.5px solid var(--ink); border-radius:6px; padding:1px 6px; }
 .md pre{ position:relative; background:var(--depth); border:2.5px solid var(--ink); border-radius:14px;
-  box-shadow:4px 4px 0 0 var(--ink); padding:18px 20px; margin:0 0 18px; overflow-x:auto; direction:ltr; }
+  box-shadow:4px 4px 0 0 var(--ink); padding:18px 20px; margin:0 0 18px; overflow-x:hidden; max-width:100%; direction:ltr; }
+.md pre.is-rtl{ direction:rtl; text-align:right; }
 .md pre code{ display:block; background:transparent; border:0; padding:0; color:var(--green-mint);
-  font-family:'JetBrains Mono', ui-monospace, monospace; font-size:13.5px; line-height:1.6; white-space:pre; }
+  font-family:'JetBrains Mono', ui-monospace, monospace; font-size:16px; line-height:1.6; white-space:pre-wrap; overflow-wrap:anywhere; word-break:break-word; }
 .md pre code.hljs{ background:transparent; padding:0; color:var(--green-mint); }
 .md pre .copy{ position:absolute; top:10px; inset-inline-end:10px; cursor:pointer; z-index:2;
   font-family:var(--font-head); font-size:12px; font-weight:700;
