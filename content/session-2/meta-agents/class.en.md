@@ -23,6 +23,11 @@ proven methods for building agents in the world are — the form in which agents
 so that they always work, always function, always carry out the tasks, by
 a correct structure suited to AI.
 
+The agents I am going to build will run across various platforms — Claude Co-work,
+Cursor, Claude Code, and cloud agent platforms. I want the methods you find to suit
+any AI platform that can run agents — both the structure and the agent's content.
+No limit on content: the agents should not be too short, but thick agents.
+
 I want to run Deep Research on this using my DR Skill.
 Write me an organized research plan that I will run across several tools in parallel, so I get
 a full answer on the most correct ways to build an agent.
