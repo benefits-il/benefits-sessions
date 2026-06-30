@@ -8,6 +8,7 @@ globalIndex: 13
 parent: content/session-3/plugin-intro/index.html
 parentLabel: מה זה Plugin
 title: הכנה — מה זה Plugin
+en: practice.en.md
 studio: [Unify, Operate]
 video: DMX81pA1dYE
 status: live

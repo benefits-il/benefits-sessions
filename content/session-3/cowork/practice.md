@@ -8,6 +8,7 @@ globalIndex: 12
 parent: content/session-3/cowork/index.html
 parentLabel: Cowork
 title: הכנה — Cowork
+en: practice.en.md
 studio: [Scout, Unify, Index, Operate]
 video: xoH6zsQaL1U
 status: live

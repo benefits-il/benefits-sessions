@@ -8,6 +8,7 @@ globalIndex: 16
 parent: content/session-3/plugins/index.html
 parentLabel: בניית Plugin
 title: בבית — בניית Plugin
+en: home.en.md
 studio: [Unify, Operate]
 video: none
 ---
