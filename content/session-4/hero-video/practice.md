@@ -73,7 +73,7 @@ Output ONLY the finished image prompt, ready to copy. Nothing else.
 
 ## שלב 3 — הפיחו בה חיים ב-`Google Flow`
 
-1. פתחו את **`Google Flow`** והתחילו סרטון חדש.
+1. פתחו את **[`Google Flow`](https://labs.google/fx/tools/flow)** והתחילו סרטון חדש.
 2. **העלו את תמונת הנושא שלכם** כרפרנס (אפשרות ה-`image-to-video`).
 3. הדביקו את הפרומפט הזה **בדיוק כפי שהוא — אל תשנו אף מילה**:
 
