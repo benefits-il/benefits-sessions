@@ -8,7 +8,7 @@ parent: content/session-4/git-github-terminal/index.html
 parentLabel: טרמינל, Git ו-GitHub
 title: בבית — טרמינל, Git ו-GitHub
 studio: [Index, Operate]
-video: TBD
+video: none
 downloads: [{"label":"צ'קליסט מוכנות","href":"checklist.md"},{"label":"כרטיסיית פקודות","href":"cheat-sheet.md"}]
 ---
 
@@ -28,7 +28,7 @@ downloads: [{"label":"צ'קליסט מוכנות","href":"checklist.md"},{"label
 
 ## 🎬 סרטון 1 · ה-`Terminal` הוא צ'אט, לא קוד
 
-<!-- video: TBD -->
+[[video:XjE89V8ZYFE]]
 
 הסרטון מראה מה זה ה-`Terminal`, איך פותחים אותו, ואיך נעים בו בין תיקיות. צפו בו, ואז עשו את התרגיל.
 
@@ -62,7 +62,7 @@ ls
 
 ## 🎬 סרטון 2 · `Git` — מכונת הזמן
 
-<!-- video: TBD -->
+[[video:3pzqmluCML0]]
 
 הסרטון מסביר מה זה `Git` ולמה הוא מחסל את בלגן הגרסאות, ואז עושה `commit` ראשון. צפו בו, ואז עשו את התרגיל.
 
@@ -100,7 +100,7 @@ git log
 
 ## 🎬 סרטון 3 · `GitHub` — הענן
 
-<!-- video: TBD -->
+[[video:0GKtC2Uti0U]]
 
 הסרטון מסביר מה זה `GitHub`, למה זה לא עוד `Google Drive`, ואיך דוחפים את העבודה לענן. צפו בו, ואז עשו את התרגיל.
 

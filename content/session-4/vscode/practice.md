@@ -8,7 +8,7 @@ parent: content/session-4/vscode/index.html
 parentLabel: VS Code ו-Claude Code
 title: בבית — VS Code ו-Claude Code
 studio: [Design, Operate]
-video: TBD
+video: none
 ---
 
 # בבית — `VS Code` ו-`Claude Code`
@@ -30,7 +30,7 @@ video: TBD
 
 ## 🎬 סרטון 1 · `VS Code` — חדר הבקרה
 
-<!-- video: TBD -->
+[[video:uWQUK1yzLWU]]
 
 הסרטון מכיר את `VS Code`, את שלושת החלקים שרואים בו, ומתקין אותו. צפו בו, ואז עשו את התרגיל.
 
@@ -53,7 +53,7 @@ video: TBD
 
 ## 🎬 סרטון 2 · התוסף של `Claude Code` — `קלוד` בונה, ואתם מפרסמים
 
-<!-- video: TBD -->
+[[video:ZCUSBzPZ9us]]
 
 הסרטון מתקין את התוסף של `Claude Code` בתוך `VS Code`, ואז נותן ל-`קלוד` פרומפט אחד שבונה עמוד — שאותו אתם מעלים לאוויר. צפו בו, ואז עשו את התרגיל.
 
