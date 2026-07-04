@@ -3,7 +3,7 @@ type: learning-chapter
 unit: hero-video
 session: 4
 parent: content/session-4/hero-video/index.html
-parentLabel: סרטון ה-hero שלכם
+parentLabel: סרטון ה-hero והתקנת ORBIT
 title: סרטון ה-hero שלכם — הסיפור המלא
 studio: [Design, Operate]
 ---

@@ -5,25 +5,29 @@ session: 4
 phase: הכנה
 num: "4.3"
 parent: content/session-4/hero-video/index.html
-parentLabel: סרטון ה-hero שלכם
-title: בבית — סרטון ה-hero לדף הנחיתה שלכם
+parentLabel: סרטון ה-hero והתקנת ORBIT
+title: בבית — סרטון ה-hero והתקנת ORBIT
 studio: [Design, Operate]
 video: none
 downloads: [{"label":"תיקיית המותג Tuesday","href":"tuesday-brand-folder.zip"}]
 ---
 
-# בבית — סרטון ה-`hero` לדף הנחיתה שלכם
+# בבית — סרטון ה-`hero` והתקנת `ORBIT`
 
 ## מה אתם מכינים
 
-בהכנה הזו אתם מכינים סרטון אחד בולט: תמונת נושא נועזת, שקמה לתחייה עם אפקט קיצוני. בכיתה, הסרטון המדויק הזה הופך לחלק העליון של דף נחיתה מבוסס-גלילה שאתם בונים סביבו. אז הסרטון שאתם מכינים עכשיו הוא הזרע של הדף כולו.
+זו ההכנה האחרונה לשיעור, ובה שתי משימות. הראשונה: סרטון אחד בולט — תמונת נושא נועזת שקמה לתחייה עם אפקט קיצוני, שבכיתה הופך לחלק העליון של דף נחיתה מבוסס-גלילה. השנייה: התקנת `ORBIT` בתוך `Claude Code`, כדי שבתחנת מאגר-הידע בכיתה הכול יהיה מוכן. שתיהן קצרות, ושתיהן חשובות לשיעור.
 
-החלק הטוב: אתם לא כותבים או משנים שום פרומפטים. אתם בוחרים על מה זה יהיה, מדביקים שני פרומפטים מוכנים, ונותנים לכלים לעשות את העבודה. הכוח נמצא בפרומפטים, לא בכם.
+החלק הטוב: אתם לא כותבים או משנים שום פרומפטים. אתם בוחרים על מה זה יהיה, מדביקים פרומפטים מוכנים, ונותנים לכלים לעשות את העבודה. הכוח נמצא בפרומפטים, לא בכם.
 
 ### מה אתם צריכים קודם
 
 - **`Claude Code`** מותקן ב-`VS Code` (מהיחידה הקודמת) — אתם תריצו איתו פרומפט על תיקייה.
 - חשבון **`Google`** עבור `Google Flow` (חינמי). `Flow` הוא כלי סרטוני ה-`AI` של `Google`.
+
+---
+
+# חלק א — סרטון ה-`hero`
 
 ---
 
@@ -104,9 +108,68 @@ Constraints: 16:9, about 8 seconds, smooth and loop-friendly, cinematic and prem
 
 ---
 
-## אם משהו נתקע
+## אם משהו נתקע בסרטון
 
 - **התמונה יצאה שטוחה או משעממת?** הריצו את פרומפט תמונת הנושא שוב — קלוד יכתוב אחד קצת שונה בכל פעם. או חוללו את התמונה פעם שנייה ב-`Gemini` / `ChatGPT`; אתם תקבלו וריאציות.
 - **האפקט לא היה דרמטי מספיק?** חוללו את סרטון ה-`Flow` שוב — הוא עשוי לבחור אפקט אחר. קיצוניות היא המטרה.
 - **אין לוגו למותג שלכם?** דלגו על תמונת הרפרנס; פרומפט תמונת הנושא עדיין עובד מטקסט המותג בלבד.
 - **משהו אחר?** צלמו מסך לקבוצה ואנחנו נסדר את זה לפני הכיתה.
+
+---
+
+# חלק ב — התקנת `ORBIT` ב-`Claude Code`
+
+`ORBIT` הוא אוסף הסקילים שבנינו בשיעור הקודם. בכיתה נשתמש בו בתוך `Claude Code` כדי לבנות מאגר ידע לעסק — ולכן הוא צריך להיות מותקן שם מראש. ההתקנה לוקחת דקה, וקלוד עושה את רובה בעצמו.
+
+## הדרך הקלה — נותנים לקלוד להתקין
+
+פותחים את `Claude Code` בכל תיקייה, ומדביקים את הפרומפט הזה כמו שהוא:
+
+```
+Install the ORBIT plugin in Claude Code so it is available globally, in every project (user-level install).
+The plugin lives here: https://github.com/benefits-il/orbit-plugin
+
+Do this:
+1. Add the marketplace: run  /plugin marketplace add benefits-il/orbit-plugin
+2. Install the plugin from it: run  /plugin install orbit@orbit-plugin
+3. If the marketplace path fails, download the zip from
+   https://github.com/benefits-il/orbit-plugin/releases/latest/download/orbit-plugin.zip
+   and install it as a personal plugin from file.
+When you are done, list which ORBIT skills are now installed so I can confirm it worked.
+```
+
+קלוד יריץ את הצעדים ויסיים ברשימת הסקילים המותקנים. אם רואים ברשימה שמות כמו `boomerang`, `kb-builder` ו-`design-pipeline` — מוכנים.
+
+## הדרך הידנית (גיבוי, אם הפרומפט לא הסתדר)
+
+### דרך 1 — דרך ה-`marketplace`
+
+1. נכנסים ל-**Customize**, ללשונית **Plugins**.
+2. באזור **Personal plugins** לוחצים על הפלוס, ובוחרים **Add marketplace**.
+3. בשדה הכתובת מדביקים את הספרייה הזאת:
+
+```
+benefits-il/orbit-plugin
+```
+
+4. לוחצים **Browse plugins**, ומתוך הספרייה מתקינים את הפלאגין של `ORBIT`.
+
+### דרך 2 — מורידים קובץ ומתקינים ממנו
+
+אם ה-`marketplace` לא נפתח או נתקע, אפשר להוריד את הפלאגין כקובץ ולהתקין אותו ישירות:
+
+1. מורידים את קובץ הפלאגין: [הורדת `ORBIT` plugin](https://github.com/benefits-il/orbit-plugin/releases/latest/download/orbit-plugin.zip).
+2. ב-**Customize ← Plugins**, באזור **Personal plugins**, לוחצים על הפלוס ובוחרים להוסיף פלאגין מקובץ.
+3. בוחרים את ה-zip שהורדתם, וההתקנה רצה.
+
+**אם אזור Personal plugins ריק, או שאין בכלל כפתור Add marketplace:** האזור הזה מופיע רק אחרי שכבר מותקן אצלכם plugin אחד כלשהו. הפתרון פשוט: מתקינים קודם plugin אחר כלשהו, וברגע שיש אחד מותקן — האזור נפתח וכפתור Add marketplace זמין. זה באג ידוע ב-`Claude`, לא תקלה אצלכם.
+
+## בדיקה — לוודא שזה עבד
+
+בכל תיקייה ב-`Claude Code`, מדביקים את משפט הבדיקה:
+
+```
+בדוק אילו סקילים של ORBIT מותקנים אצלך והצג רשימה קצרה.
+```
+
+רואים ברשימה את סקילי `ORBIT` — וזהו, אתם מוכנים לכיתה.
