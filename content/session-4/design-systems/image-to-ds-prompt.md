@@ -59,7 +59,7 @@ Then **call `ExitPlanMode` to request my approval. Do not write any code until I
 ---
 
 ## Step 3 — Build (only after approval)
-Create ONE self-contained `index.html`.
+Create ONE self-contained `design-system.html`.
 
 ### Architecture & shell
 - Single file. All CSS in one inline `<style>`, all JS in one inline `<script>`. **No build step, no frameworks or libraries.** The only external resources are **Google Fonts** and **Tabler Icons** (webfont via CDN); provide a graceful system-font fallback if the CDN is offline.
@@ -96,4 +96,4 @@ Tasteful and subtle: fade/slide-in as sections enter the viewport (IntersectionO
 ---
 
 ## Step 4 — Open it
-After building, open `index.html` in my default browser using the correct command for my OS — Windows PowerShell: `Start-Process index.html`; macOS: `open index.html`; Linux: `xdg-open index.html`.
+After building, open `design-system.html` in my default browser using the correct command for my OS — Windows PowerShell: `Start-Process design-system.html`; macOS: `open design-system.html`; Linux: `xdg-open design-system.html`.
