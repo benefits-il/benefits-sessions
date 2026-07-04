@@ -87,32 +87,32 @@ How will you know you have a good plan and not a generic question? If you can ha
 
 ### The idea
 
-I promised you would not write this plan by hand, and that is true. The Skill called **research-architect** does exactly that: you give it a topic, and it builds you an organized research plan across the five fields. It even asks you clarifying questions before it sets off.
+I promised you would not write this plan by hand, and that is true. The Skill called **research-architect** does exactly that: you give it a topic, and it builds you an organized research plan across the five fields. It infers all the details from the context you give it, and asks you only one thing before it sets off: which language you want the plan in.
 
 The name sounds like an agent, right? You are right that it sounds that way, but it is a Skill. You load it as is, without opening it. Here is the download and installation, to copy:
 
-https://benefits-il.dev/orbit-plugin/research-architect.zip
+https://github.com/benefits-il/orbit-plugin/releases/latest/download/research-architect.zip
 
 Download -> in Claude: Settings -> Skills -> Upload skill -> choose the ZIP. (In Claude Code you can also drop it into `.claude/skills/` and run `/research-architect`.)
 
 ### What it looks like
 
-A sample topic: an investigation of the world of teaching and learning and everything related to AI at conferences. When you run the Skill on a topic like this, it does not jump straight to a plan. It starts asking questions. In what language do you want the report? Because sometimes you will want a knowledge base in Hebrew, sometimes in English. Which tool is it for? What is at the center of the investigation, how AI is taught at conferences, tools for the teaching itself, or trends?
+A sample topic: an investigation of the world of teaching and learning and everything related to AI at conferences. When you run the Skill on a topic like this, it does not jump straight to a plan, but it also does not interrogate you. It asks one thing only: in what language you want the plan, because sometimes you will want a knowledge base in Hebrew, sometimes in English.
 
-And only after it understands what you want, it puts out an organized plan: context and background, scope, sub-questions, and the format you want the report in. Exactly the five fields, beautifully phrased.
+Everything else it infers from the context you gave it, the focus, the scope, the audience, and it writes its assumptions into the plan so you can correct them at a glance. And only after you have chosen a language, it puts out an organized plan: context and background, scope, sub-questions, and the format you want the report in. Exactly the five fields, beautifully phrased.
 
-Worth knowing one more point: you do not have to come to the Skill empty-handed. It does ask clarifying questions, but usually, by the time you really get to it, you will come with information from outside. Not from scratch, but out of a project you are already working on according to STUDIO™, one you already have a clear picture of. You will not come and say "tell me about teaching" from scratch. You will come and tell it exactly what you need, and it will build a precise plan around that.
+Worth knowing one more point: you do not have to come to the Skill empty-handed. It asks only for the output language, but usually, by the time you really get to it, you will come with information from outside. Not from scratch, but out of a project you are already working on according to STUDIO™, one you already have a clear picture of. You will not come and say "tell me about teaching" from scratch. You will come and tell it exactly what you need, and it will build a precise plan around that.
 
 ### Now you
 
-The Skill is installed. Give it one topic from your own world, and watch a plan come back with a goal, a main question, sub-questions, scope, and format. If it asks you a question before it builds, great, that is exactly its job.
+The Skill is installed. Give it one topic from your own world, and watch a plan come back with a goal, a main question, sub-questions, scope, and format. It will ask you only for the output language, then build, that is exactly its job.
 
 ### Self-check
 
-How will you know the Skill worked right? If it asked you at least one question before it put out a plan, and if the plan that came out covers all five fields. If it jumped straight to a plan without asking anything, you probably gave it so much information up front that there was nothing left to clarify, and that is perfectly fine too.
+How will you know the Skill worked right? If the plan that came out covers all five fields, and if the assumptions it made about the scope and focus match what you meant. It asks you only for the output language; everything else it infers, so read through the assumptions it wrote and make sure they are right. If something is off, just tell it to fix it.
 
-> **In your own words:** why is it good for the Skill to ask you questions before it builds the plan?
-> *(Example answer: because clarifying questions turn a vague topic into a precise plan, and a precise plan returns a report you can work with, not a generic one.)*
+> **In your own words:** why is it better for the Skill to infer the details from your context than to interrogate you on every field?
+> *(Example answer: because when you come with context out of a project you are already working on, the Skill can infer scope and focus from it on its own, and it writes its assumptions so you can correct them at a glance. Less friction, and you are still in control.)*
 
 ---
 
@@ -160,7 +160,7 @@ If someone asks you "why not just run it in Gemini and be done?", what will you 
 
 ## Putting it together
 
-So what did we have. **Deep Research** is not a chat and not Google, it is a research agent that goes out to the internet and comes back with a cited report, and runs five to thirty minutes while you do other things. Every good run rests on a research plan with five fields: Goal, Main question, Sub-questions, Scope, and Output format. You do not write it by hand, **research-architect** does that and asks you clarifying questions. And that same plan you run in several tools in parallel (Ensemble), and gather everything into one place, because different sources give a broad, cross-checked pool.
+So what did we have. **Deep Research** is not a chat and not Google, it is a research agent that goes out to the internet and comes back with a cited report, and runs five to thirty minutes while you do other things. Every good run rests on a research plan with five fields: Goal, Main question, Sub-questions, Scope, and Output format. You do not write it by hand, **research-architect** does that, infers the details from your context, and asks you only for the output language. And that same plan you run in several tools in parallel (Ensemble), and gather everything into one place, because different sources give a broad, cross-checked pool.
 
 Three questions to consolidate:
 1. What is the essential difference between a Deep Research report and a chat's answer?
@@ -177,13 +177,12 @@ Three questions to consolidate:
 
 This is the moment to really run it. The order matters, so take it step by step.
 
-**Step 1: the plan.** Open the Skill and give it one real topic from your own world. Let it ask you, approve, and take the ready plan. Here is the prompt to open the Skill, to copy:
+**Step 1: the plan.** Open the Skill and give it one real topic from your own world. It will ask you which language you want the plan in, approve, and take the ready plan. Here is the prompt to open the Skill, to copy:
 
 ```
 I want to produce a research plan using research-architect in order to research [your topic].
-Ask me the clarifying questions you need, then build an organized research plan with a goal, a
-main question, sub-questions, scope, and output format. Write in English. Intended for several
-different Deep Research tools. Explain what you understood and wait for approval to continue.
+Build an organized research plan with a goal, a main question, sub-questions, scope, and
+output format. Explain what you understood and wait for approval to continue.
 ```
 
 **Step 2: running in several tools.** Take the plan that came out, and run it in every Deep Research tool you have access to, out of the six: Perplexity, Grok, Qwen, Arena, Gemini, Claude. You start them all, and you leave. Do not wait for one before you start the next. The more tools you run in, the broader and more cross-checked the pool comes out.
@@ -196,7 +195,7 @@ different Deep Research tools. Explain what you understood and wait for approval
 
 **The three tools, one difference:** Google = links · chat = answer · Deep Research = a cited report (runs 5 to 30 minutes, run and forget).
 
-**The five research-plan fields:** Goal · Main question · Sub-questions · Scope (where to search + what is out of range) · Output format. All of them built by **research-architect**, and it asks clarifying questions.
+**The five research-plan fields:** Goal · Main question · Sub-questions · Scope (where to search + what is out of range) · Output format. All of them built by **research-architect**, which infers the details from your context and asks you only for the output language.
 
 **The six sites for deep search:** Perplexity (perplexity.ai, the fastest) · Grok (grok.com) · Qwen (chat.qwen.ai) · Arena (arena.ai) · Gemini (gemini.google.com/app, the most sources) · Claude (on your own files).
 

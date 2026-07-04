@@ -10,7 +10,7 @@
 
 4. **The five fields of a research plan.** Goal (what you will do with the report) · Main question (the main question) · Sub-questions (three to five sub-questions) · Scope (where to search and what is out of range) · Output format (the output format). The Scope field is what focuses the report, and without it the report comes out broad and flat.
 
-5. **research-architect writes the plan for you.** A Skill that takes a topic and builds an organized plan across the five fields, and asks clarifying questions before it sets off. You do not write the plan by hand.
+5. **research-architect writes the plan for you.** A Skill that takes a topic and builds an organized plan across the five fields. It infers the details from the context you give it, and asks you only one thing: which language you want the plan in. You do not write the plan by hand.
 
 6. **Ensemble: the same plan, several tools in parallel.** Six sites for deep search as one set: Perplexity · Grok · Qwen · Arena · Gemini · Claude. You run the same plan in several of them, and gather everything into one place. Why several and not one? Because each model reaches different sources, and several tools are several independent points of view that cross into a broad, reliable pool.
 

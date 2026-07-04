@@ -22,7 +22,7 @@ It is also worth telling apart two kinds of tools. There are tools that only sea
 
 You already know how to install a Skill. Now you install **research-architect**, a Skill with one single job: to take a topic and return an organized research plan, so you never have to write one manually.
 
-1. Download the Skill from the ORBIT page, with the "download only the Skill" option: https://benefits-il.dev/orbit-plugin/research-architect.zip
+1. Download the Skill from the ORBIT page, with the "download only the Skill" option: https://github.com/benefits-il/orbit-plugin/releases/latest/download/research-architect.zip
 2. Install it in Claude: Settings -> Skills -> Upload skill -> choose the ZIP file.
 3. Test it: give it a sample topic, for example "the market for X", and make sure it returns a plan with the five fields:
    - **Goal** — what you will do with the report in the end.
@@ -44,13 +44,12 @@ Now you run a real research, and the topic is Deep Research itself: which tools 
 ```
 I want to produce a research plan using research-architect in order to research the world of
 Deep Research: which tools exist that do deep research, what each one is, and what makes it
-unique. Put emphasis on Perplexity, Grok, Qwen, Arena, Gemini, and Claude. Ask me the
-clarifying questions you need, then build an organized research plan with a goal, a main
-question, sub-questions, scope, and output format. Write in English. Intended for several
-different Deep Research tools. Explain what you understood and wait for approval to continue.
+unique. Put emphasis on Perplexity, Grok, Qwen, Arena, Gemini, and Claude. Build an organized
+research plan with a goal, a main question, sub-questions, scope, and output format. Explain
+what you understood and wait for approval to continue.
 ```
 
-The Skill will ask you a question or two, then return an organized plan. Approve it and take it.
+The Skill will ask you only for the output language, then return an organized plan. Approve it and take it.
 
 **Step 2 — running it in a few tools.** Take the plan that came out, and run it as Deep Research in both Claude and Gemini. You start both runs, and you do not wait for one before you start the other. Each tool runs on its own for a few minutes, and in the meantime you are free.
 
@@ -92,5 +91,5 @@ Want to look further out? There is a whole other layer of tools that know how to
 
 ## Materials and links
 
-- **research-architect** — [download only the Skill](https://benefits-il.dev/orbit-plugin/research-architect.zip).
+- **research-architect** — [download only the Skill](https://github.com/benefits-il/orbit-plugin/releases/latest/download/research-architect.zip).
 - **The tools:** [Claude](https://claude.ai) · [ChatGPT](https://chatgpt.com) · [Gemini](https://gemini.google.com/app) · [Perplexity](https://perplexity.ai) · [DeepSeek](https://chat.deepseek.com) · [Grok](https://grok.com) · [Arena](https://arena.ai).
