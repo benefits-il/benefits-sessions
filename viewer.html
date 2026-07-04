@@ -93,8 +93,11 @@
 
   /* ---------- direction ---------- */
   function detectDir(text){
-    const heb = (text.match(/[֐-׿]/g) || []).length;
-    const lat = (text.match(/[A-Za-z]/g) || []).length;
+    // strip fenced code blocks first — a long English prompt/snippet must not flip the
+    // whole page's direction; code blocks get their own per-block dir (see the pre loop below)
+    const prose = text.replace(/```[\s\S]*?```/g, '');
+    const heb = (prose.match(/[֐-׿]/g) || []).length;
+    const lat = (prose.match(/[A-Za-z]/g) || []).length;
     return heb >= lat * 0.5 ? 'rtl' : 'ltr';
   }
 
