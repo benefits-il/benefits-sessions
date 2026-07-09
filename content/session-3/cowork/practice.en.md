@@ -35,7 +35,13 @@ Three steps, and you're done:
 
 1. Install or update Claude Desktop from claude.com/download, and open the **Cowork** tab. Make sure you're in Cowork and not in a regular chat — only in Cowork do the outputs get saved as files. If something "runs" but no file appears, you were in a chat.
 2. In **Settings**, under **Capabilities**, switch on **Code execution and file creation** — the toggle that powers the skills which produce Excel, PowerPoint, Word, and PDF.
-3. Set **the demo folder** as the working folder, and make sure it really got selected — Cowork shows the name of the active folder. This is where it reads and writes, and only here.
+3. Connect **the demo folder** as the working folder. This is the step that matters most, so slowly and precisely:
+   - Inside the Cowork tab, next to the typing bar, sits the **working-folder picker** (a folder-selection button). Click it.
+   - In the window that opens, navigate to the demo folder **you extracted** and select it. Pick the folder itself — not a file inside it, and not the zip.
+   - **The success check:** Cowork shows the name of the active folder on screen. You see the right name — you're connected. This is where it reads and writes, and only here.
+   - **If you don't see the folder name, or you see a different one:** the folder didn't connect. Click the picker again and reselect. And if Cowork says the folder is empty even though you put files in it — most likely a different folder got selected (or the unextracted zip). Don't move on to the exercises until the right name is showing.
+
+Connecting a folder is a move you'll repeat throughout the course, in the coming units too. Worth doing it once or twice until it's in your hands.
 
 That's it. Now for the fun part.
 
