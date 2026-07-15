@@ -8,7 +8,7 @@ parent: content/session-5/bmad-prep/index.html
 parentLabel: BMAD — ההסבר של בן
 title: בבית — BMAD, ההסבר של בן
 studio: [Operate]
-video: TBD
+video: L4F6LZT_3CU
 ---
 
 # בבית — BMAD, ההסבר של בן
@@ -23,8 +23,7 @@ video: TBD
 
 ## 🎬 הסרטון של בן — קודם צופים
 
-<!-- video: TBD -->
-> הסרטון בהכנה ויעלה כאן בקרוב.
+<!-- video set: L4F6LZT_3CU (youtu.be/L4F6LZT_3CU, unlisted) — המנוע בונה את ה-embed מ-video: ב-frontmatter -->
 
 זה הסרטון החשוב של הרצועה. בן מסביר בו מה זה BMAD, למה הוא השיא של כל מה שלמדתם — ואיך כל מה שבניתם בקורס מתחבר אליו. צפו בו לפני שאתם ממשיכים.
 

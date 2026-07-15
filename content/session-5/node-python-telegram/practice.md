@@ -8,7 +8,7 @@ parent: content/session-5/node-python-telegram/index.html
 parentLabel: מסלול ההתקנות
 title: בבית — מסלול ההתקנות
 studio: [Operate]
-video: TBD
+video: nHI0dBG938E
 ---
 
 # בבית — מסלול ההתקנות
@@ -25,8 +25,7 @@ video: TBD
 
 ## 🎬 הסרטון של היחידה
 
-<!-- video: TBD -->
-> הסרטון בהכנה ויעלה כאן בקרוב.
+<!-- video set: nHI0dBG938E (youtu.be/nHI0dBG938E, unlisted) — המנוע בונה את ה-embed מ-video: ב-frontmatter -->
 
 הסרטון עובר על כל המסלול: בדיקת מה שיש, התקנת Python, טלגרם, ויצירת הבוט הראשון שלכם.
 
