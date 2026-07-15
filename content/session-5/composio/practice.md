@@ -8,7 +8,7 @@ parent: content/session-5/composio/index.html
 parentLabel: Composio — טעימת רעיונות
 title: בבית — Composio, טעימת רעיונות
 studio: [Scout, Unify]
-video: TBD
+video: saIt2xAcSO4
 ---
 
 # בבית — Composio, טעימת רעיונות
@@ -23,8 +23,7 @@ video: TBD
 
 ## 🎬 הסרטון של היחידה
 
-<!-- video: TBD -->
-> הסרטון בהכנה ויעלה כאן בקרוב.
+<!-- video set: saIt2xAcSO4 (youtu.be/saIt2xAcSO4, unlisted) — המנוע בונה את ה-embed מ-video: ב-frontmatter -->
 
 הסרטון מציג את הרעיון במשפט — שער אחד לאלף אפליקציות — וחמישה רעיונות שממחישים מה זה פותח.
 

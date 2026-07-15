@@ -8,7 +8,7 @@ parent: content/session-5/stitch-screens/index.html
 parentLabel: מסכים לפלטפורמה שלכם
 title: בבית — מסכים לפלטפורמה שלכם
 studio: [Design]
-video: TBD
+video: htuVwatcqvE
 downloads: [{"label":"מסמך ההתקנה של Stitch MCP","href":"stitch-mcp-install.md"}]
 ---
 
@@ -36,8 +36,7 @@ downloads: [{"label":"מסמך ההתקנה של Stitch MCP","href":"stitch-mcp-
 
 ## 🎬 הסרטון של היחידה
 
-<!-- video: TBD -->
-> הסרטון בהכנה ויעלה כאן בקרוב.
+<!-- video set: htuVwatcqvE (youtu.be/htuVwatcqvE, unlisted) — המנוע בונה את ה-embed מ-video: ב-frontmatter -->
 
 הסרטון מראה את כל המסלול חי: מחברים את Stitch לקלוד קוד, ומשם — מהמותג שלכם, בפרומפט אחד, למסכים שנוחתים בתיקייה.
 

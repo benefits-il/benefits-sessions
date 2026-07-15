@@ -8,7 +8,7 @@ parent: content/session-5/api-keys-bitwarden/index.html
 parentLabel: מפתח, כסף וכספת
 title: בבית — מפתח, כסף וכספת
 studio: [Index, Operate]
-video: TBD
+video: 56JcNoT7t2g
 downloads: [{"label":"צ'קליסט אבטחת מפתחות","href":"checklist.md"},{"label":"קובץ PDF לתרגול","href":"api-keys-story.pdf"}]
 ---
 
@@ -33,8 +33,7 @@ downloads: [{"label":"צ'קליסט אבטחת מפתחות","href":"checklist.m
 
 ## 🎬 הסרטון של היחידה
 
-<!-- video: TBD -->
-> הסרטון בהכנה ויעלה כאן בקרוב. הכלל שלנו: קודם צופים, ואז מבצעים — אבל כל הצעדים כתובים כאן במלואם, אז אפשר להתחיל גם מהכתוב.
+<!-- video set: 56JcNoT7t2g (youtu.be/56JcNoT7t2g, unlisted) — המנוע בונה את ה-embed מ-video: ב-frontmatter -->
 
 הסרטון עובר על כל המסלול: מה זה מפתח API ולמה הוא כרטיס אשראי דיגיטלי, הקמת הכספת, יצירת מפתח אמיתי, טעינת הקרדיט, ובדיקה על כלי אמיתי.
 

@@ -8,7 +8,7 @@ parent: content/session-5/mcp/index.html
 parentLabel: MCP — החיבור האוניברסלי
 title: בבית — MCP, החיבור האוניברסלי
 studio: [Unify, Operate]
-video: TBD
+video: -pf-OX02SQY
 downloads: [{"label":"מסמך ההתקנה של NotebookLM MCP","href":"nbl-mcp-install.md"}]
 ---
 
@@ -32,8 +32,7 @@ downloads: [{"label":"מסמך ההתקנה של NotebookLM MCP","href":"nbl-mcp
 
 ## 🎬 הסרטון של היחידה
 
-<!-- video: TBD -->
-> הסרטון בהכנה ויעלה כאן בקרוב. הכלל שלנו: קודם צופים, ואז מבצעים — אבל כל הצעדים כתובים כאן במלואם, אז אפשר להתחיל גם מהכתוב.
+<!-- video set: -pf-OX02SQY (youtu.be/-pf-OX02SQY, unlisted) — המנוע בונה את ה-embed מ-video: ב-frontmatter -->
 
 הסרטון עובר על כל המסלול: הבעיה שמאחורי MCP, האנלוגיה שמסבירה הכול, ההבדל מ-API ומקונקטור — וחיבור ראשון בקליק.
 
