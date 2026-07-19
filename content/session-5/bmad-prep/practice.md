@@ -2,10 +2,8 @@
 type: practice
 unit: bmad-prep
 session: 5
-phase: הכנה
-num: "5.7"
-parent: content/session-5/bmad-prep/index.html
-parentLabel: BMAD — ההסבר של בן
+phase: home
+num: 7
 title: בבית — BMAD, ההסבר של בן
 studio: [Operate]
 video: L4F6LZT_3CU
@@ -62,7 +60,7 @@ BMAD היא שיטה שמרכיבה סביבכם צוות שלם של סוכני
 | מה בניתם | איפה |
 |---|---|
 | קול-מותג ואיפיון | שיעור 3 — BUILD YOUR BRAND |
-| ‏Knowledge Base | שיעור 4 — תחנת ה-KB + design-pipeline |
+| ‏Knowledge Base | שיעור 4 — תחנת ה-KB |
 | מערכת-עיצוב | שיעור 4 — תחנת מערכות-העיצוב |
 | סקיצות-מסכים | ההכנה הזאת — יחידת המסכים |
 
