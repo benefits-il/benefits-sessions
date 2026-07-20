@@ -17,61 +17,61 @@ target: Claude Code
 
 ---
 
-## הנחיות לקלוד
+## Instructions for Claude
 
-קלוד — קרא את החלק הזה ובצע אותו צעד-צעד. אחרי כל צעד, ספר למשתמש בקצרה מה קרה, ואם צריך פעולה מהמשתמש (למשל התחברות בדפדפן) — עצור ובקש אותה.
+Claude — read this section and carry it out step by step. After each step, briefly tell the user what happened, and if an action is needed from the user (for example, signing in through the browser) — stop and ask for it.
 
-המטרה: להתקין ולהפעיל את שרת ה-MCP של NotebookLM בתוך Claude Code, כך שתהיה לך גישה למחברות של המשתמש.
+Goal: install and run the NotebookLM MCP server inside Claude Code, so that you have access to the user's notebooks.
 
-הכלי שמדובר בו הוא חבילת הפייתון `notebooklm-mcp-cli`. היא מתקינה שתי פקודות: `nlm` (כלי שורת-פקודה לניהול ואימות) ו-`notebooklm-mcp` (שרת ה-MCP עצמו). האימות מול Google נעשה דרך `nlm login`, שפותח חלון Chrome שבו המשתמש מתחבר עם חשבון Google שלו — בלי מפתח API ובלי כרטיס אשראי.
+The tool in question is the Python package `notebooklm-mcp-cli`. It installs two commands: `nlm` (a command-line tool for management and authentication) and `notebooklm-mcp` (the MCP server itself). Authentication with Google is done through `nlm login`, which opens a Chrome window where the user signs in with their own Google account — no API key and no credit card.
 
-לפני שאתה מתחיל — תסביר למשתמש בקצרה מה הבנת ומה אתה עומד לעשות, ותחכה לאישור כדי להמשיך.
+Before you start — briefly explain to the user what you understood and what you are about to do, and wait for approval to continue.
 
-בצע כך:
+Proceed as follows:
 
-1. בדוק דרישות מקדימות. ודא שמותקן Python (גרסה 3.10 ומעלה). בדוק אם קיים במחשב `uv` או `pipx` להתקנת כלים גלובליים. אם אין אף אחד מהם, התקן `uv` (הדרך המומלצת) והמשך.
+1. Check prerequisites. Make sure Python (version 3.10 or higher) is installed. Check whether `uv` or `pipx` is available on the machine for installing global tools. If neither is present, install `uv` (the recommended way) and continue.
 
-2. התקן את החבילה גלובלית. הדרך המומלצת:
+2. Install the package globally. The recommended way:
 
    ```
    uv tool install notebooklm-mcp-cli
    ```
 
-   אם אין `uv`, השתמש ב-`pipx install notebooklm-mcp-cli`. אחרי ההתקנה, ודא שהפקודות `nlm` ו-`notebooklm-mcp` זמינות בנתיב.
+   If `uv` is not available, use `pipx install notebooklm-mcp-cli`. After the installation, make sure the commands `nlm` and `notebooklm-mcp` are available on the PATH.
 
-3. רשום את שרת ה-MCP ל-Claude Code:
+3. Register the MCP server with Claude Code:
 
    ```
    nlm setup add claude-code
    ```
 
-   זה מוסיף את השרת `notebooklm-mcp` להגדרות ה-MCP של Claude Code.
+   This adds the `notebooklm-mcp` server to Claude Code's MCP configuration.
 
-4. אמת את המשתמש מול Google. הרץ:
+4. Authenticate the user with Google. Run:
 
    ```
    nlm login
    ```
 
-   ייפתח חלון Chrome. עצור כאן ואמור למשתמש בפירוש: "ייפתח לך חלון דפדפן — התחבר עם חשבון Google שאתה משתמש בו ל-NotebookLM, ואשר את ההרשאות." חכה שהמשתמש יסיים לפני שתמשיך.
+   A Chrome window will open. Stop here and tell the user explicitly, in Hebrew: "ייפתח לך חלון דפדפן — התחבר עם חשבון Google שאתה משתמש בו ל-NotebookLM, ואשר את ההרשאות." Wait for the user to finish before you continue.
 
-5. ודא שהאימות תפס:
+5. Confirm that the authentication took hold:
 
    ```
    nlm login --check
    ```
 
-   ואז הרץ אבחון כללי:
+   Then run a general diagnostic:
 
    ```
    nlm doctor
    ```
 
-   אם משהו מסומן כלא-תקין ב-doctor, תקן לפי מה שהוא מציין וחזור על הצעד.
+   If anything is marked as unhealthy in `doctor`, fix it according to what it indicates and repeat the step.
 
-6. כדי ששרת ה-MCP החדש ייתפס, ייתכן שתצטרך לרענן את חיבורי ה-MCP של Claude Code (טעינה מחדש של השרתים או פתיחה מחדש של הסשן). אם השרת לא מופיע בכלים הזמינים לך אחרי הרישום — בקש מהמשתמש לפתוח מחדש את Claude Code.
+6. For the new MCP server to be picked up, you may need to refresh Claude Code's MCP connections (reloading the servers or restarting the session). If the server does not appear in the tools available to you after registration — ask the user to reopen Claude Code.
 
-מה לא להמציא: אם פקודה מסוימת נכשלת בצורה שאתה לא מבין, או שהמשתמש במערכת הפעלה שונה ממה שההוראות מניחות — אל תנחש. עצור, הסבר למשתמש מה ניסית ומה קרה, ובקש ממנו לפנות לקבוצת הקורס עם צילום מסך.
+What not to invent: if a particular command fails in a way you do not understand, or the user is on a different operating system than these instructions assume — do not guess. Stop, explain to the user what you tried and what happened, and ask them to reach out to the course group with a screenshot.
 
 ---
 
@@ -81,6 +81,12 @@ target: Claude Code
 
 ```text
 רשום לי אילו מחברות יש לי ב-NotebookLM
+```
+
+או, אותו פרומפט באנגלית:
+
+```text
+List the notebooks I have in NotebookLM
 ```
 
 אם החיבור חי, קלוד יזהה לבד שיש לו כלי חדש, יפנה אליו, ויחזיר רשימה אמיתית של המחברות מהחשבון שלכם. זהו — החיבור עובד.

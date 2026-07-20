@@ -19,49 +19,49 @@ target: Claude Code
 
 ---
 
-## הנחיות לקלוד
+## Instructions for Claude
 
-קלוד — קרא את החלק הזה ובצע אותו צעד-צעד. אחרי כל צעד, ספר למשתמש בקצרה מה קרה, ואם צריך פעולה מהמשתמש (למשל הרצת פקודת-החיבור בטרמינל) — עצור ובקש אותה.
+Claude — read this section and carry it out step by step. After each step, briefly tell the user what happened, and if an action is needed from the user (for example, running the connection command in the terminal) — stop and ask for it.
 
-המטרה: להתקין ולהפעיל את שרת ה-MCP של Google Stitch בתוך Claude Code, כך שתהיה לך גישה לפרויקטים ולמסכים של המשתמש ב-Stitch, ותוכל למשוך מהם תמונות, קוד ומערכת-עיצוב.
+Goal: install and run the Google Stitch MCP server inside Claude Code, so that you have access to the user's Stitch projects and screens, and can pull images, code, and a design system from them.
 
-הכלי שמדובר בו הוא חבילת ה-npm הרשמית `@_davideast/stitch-mcp`. היא רצה דרך npx (ולכן דורשת Node, שכבר הותקן בצעד קודם ביחידה) ומרימה proxy מקומי שמדבר עם Stitch. האימות נעשה עם מפתח API של Stitch, שמוזרק כמשתנה-סביבה בשם `STITCH_API_KEY`. המפתח הוא סוד של המשתמש: הוא שמור אצלו ב-Bitwarden, והמשתמש מדביק אותו ישירות בטרמינל שלו — לא בצ'אט. אתה לא מייצר את המפתח, לא מבקש אותו, ולא רושם אותו לשום מקום.
+The tool in question is the official npm package `@_davideast/stitch-mcp`. It runs through npx (and therefore requires Node, which was already installed in an earlier step of the unit) and brings up a local proxy that talks to Stitch. Authentication is done with a Stitch API key, injected as an environment variable named `STITCH_API_KEY`. The key is the user's secret: it is stored in their Bitwarden, and the user pastes it directly into their own terminal — not into the chat. You do not generate the key, you do not ask for it, and you do not write it down anywhere.
 
-כלל מחייב: לעולם אל תבקש מהמשתמש להדביק את המפתח בשיחה. אם המשתמש הדביק אותו בטעות בצ'אט — אל תחזור עליו בטקסט, אמור לו להחליף אותו (יוצרים מפתח חדש ב-Stitch settings ומוחקים את הישן), והמשך עם החדש.
+Binding rule: never ask the user to paste the key into the conversation. If the user pasted it into the chat by mistake — do not repeat it in text, tell them to rotate it (create a new key in Stitch settings and delete the old one), and continue with the new one.
 
-לפני שאתה מתחיל — תסביר למשתמש בקצרה מה הבנת ומה אתה עומד לעשות, ותחכה לאישור כדי להמשיך.
+Before you start — briefly explain to the user what you understood and what you are about to do, and wait for approval to continue.
 
-בצע כך:
+Proceed as follows:
 
-1. בדוק דרישות מקדימות. ודא שמותקן Node, ושהפקודה npx זמינה. אם Node חסר — עצור ואמור למשתמש שצריך להתקין אותו קודם (זה נעשה בצעד הראשון של היחידה, nodejs.org, גרסת LTS). בלי Node אי-אפשר להמשיך.
+1. Check prerequisites. Make sure Node is installed and the `npx` command is available. If Node is missing — stop and tell the user it must be installed first (this was done in the first step of the unit, nodejs.org, LTS version). Without Node you cannot continue.
 
-2. הצג למשתמש את פקודת-החיבור והנחה אותו להריץ אותה בעצמו. אמור לו בפירוש: "פתח חלון טרמינל — לא את השיחה איתי. שלוף את מפתח ה-API של Stitch מ-Bitwarden — הרשומה ששמרת בצעד הקודם — החלף בפקודה את `<המפתח-מהכספת>` במפתח, והרץ אותה." הפקודה:
+2. Show the user the connection command and guide them to run it themselves. Tell them explicitly, in Hebrew: "פתח חלון טרמינל — לא את השיחה איתי. שלוף את מפתח ה-API של Stitch מ-Bitwarden — הרשומה ששמרת בצעד הקודם — והחלף בפקודה את `<the-key-from-the-vault>` במפתח. מוחקים את `<the-key-from-the-vault>` כולו, כולל הסוגריים המשולשים `<` `>`, ובמקומו נשאר רק המפתח — שום `<` או `>` לא נשאר בפקודה הסופית. ואז הרץ אותה." The command:
 
    ```
-   claude mcp add stitch -s user -e STITCH_API_KEY=<המפתח-מהכספת> -- npx -y @_davideast/stitch-mcp proxy
+   claude mcp add stitch -s user -e STITCH_API_KEY=<the-key-from-the-vault> -- npx -y @_davideast/stitch-mcp proxy
    ```
 
-   הדגל `-s user` שומר את החיבור גלובלית, לכל הפרויקטים. חכה שהמשתמש יאשר שהפקודה רצה והסתיימה בלי שגיאה, ורק אז המשך.
+   The `-s user` flag saves the connection globally, for all projects. Wait for the user to confirm that the command ran and finished without an error, and only then continue.
 
-   קיימת גם דרך מודרכת חלופית — אשף שהמשתמש מריץ בעצמו באותו טרמינל, בוחר בו Claude Code ומזין את המפתח (גם שם — בטרמינל בלבד):
+   There is also an alternative guided way — a wizard the user runs themselves in the same terminal, selecting Claude Code in it and entering the key (there too — in the terminal only):
 
    ```
    npx @_davideast/stitch-mcp init
    ```
 
-   אם הפקודה הישירה נכשלת בצורה לא-ברורה, הצע למשתמש את האשף המודרך.
+   If the direct command fails in an unclear way, offer the user the guided wizard.
 
-3. ודא שהשרת נרשם. הרץ:
+3. Confirm the server is registered. Run:
 
    ```
    claude mcp list
    ```
 
-   ובדוק שהשרת בשם stitch מופיע ברשימה ומצליח להתחבר. אם הוא מופיע פעמיים או מסומן כ-Failed to connect — ראה את טבלת "אם נתקעתם" למטה.
+   and check that the server named stitch appears in the list and connects successfully. If it appears twice or is marked as Failed to connect — see the "אם נתקעתם" table below.
 
-4. כדי ששרת ה-MCP החדש ייתפס, ייתכן שתצטרך לרענן את חיבורי ה-MCP של Claude Code, או לפתוח מחדש את הסשן. אם השרת לא מופיע בכלים הזמינים לך אחרי הרישום — בקש מהמשתמש לסגור ולפתוח מחדש את Claude Code.
+4. For the new MCP server to be picked up, you may need to refresh Claude Code's MCP connections, or restart the session. If the server does not appear in the tools available to you after registration — ask the user to close and reopen Claude Code.
 
-מה לא להמציא: אם פקודה מסוימת נכשלת בצורה שאתה לא מבין, אם המפתח נדחה, או שהמשתמש במערכת הפעלה שונה ממה שההוראות מניחות — אל תנחש ואל תמציא פקודה או endpoint. עצור, הסבר למשתמש מה ניסית ומה קרה, ובקש ממנו לפנות לקבוצת הקורס עם צילום מסך.
+What not to invent: if a particular command fails in a way you do not understand, if the key is rejected, or the user is on a different operating system than these instructions assume — do not guess and do not invent a command or endpoint. Stop, explain to the user what you tried and what happened, and ask them to reach out to the course group with a screenshot.
 
 ---
 
