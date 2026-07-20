@@ -6,7 +6,7 @@ phase: home
 num: 4
 title: בבית — מסכים לפלטפורמה שלכם
 studio: [Design]
-video: htuVwatcqvE
+video: mI7zfq1fP1o
 ---
 
 # בבית — מסכים לפלטפורמה שלכם
@@ -31,7 +31,7 @@ video: htuVwatcqvE
 
 ## 🎬 הסרטון של היחידה
 
-<!-- video set: htuVwatcqvE (youtu.be/htuVwatcqvE, unlisted) — המנוע בונה את ה-embed מ-video: ב-frontmatter -->
+<!-- video set: mI7zfq1fP1o (youtu.be/mI7zfq1fP1o, unlisted) — המנוע בונה את ה-embed מ-video: ב-frontmatter -->
 
 הסרטון מראה את כל המסלול חי: מחברים את Stitch לקלוד קוד, ומשם — מהמותג שלכם, בפרומפט אחד, למסכים שנוחתים בתיקייה.
 
