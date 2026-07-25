@@ -59,7 +59,7 @@ Proceed as follows:
 
    and check that the server named stitch appears in the list and connects successfully. If it appears twice or is marked as Failed to connect — see the "אם נתקעתם" table below.
 
-4. For the new MCP server to be picked up, you may need to refresh Claude Code's MCP connections, or restart the session. If the server does not appear in the tools available to you after registration — ask the user to close and reopen Claude Code.
+4. For the new MCP server to be picked up, you may need to refresh Claude Code's MCP connections, or restart the session. If the server does not appear in the tools available to you after registration — ask the user to press Ctrl+Shift+P in VS Code, choose `Developer: Reload Window`, and reopen the chat panel. If it still does not appear, ask them to close and reopen Claude Code.
 
 What not to invent: if a particular command fails in a way you do not understand, if the key is rejected, or the user is on a different operating system than these instructions assume — do not guess and do not invent a command or endpoint. Stop, explain to the user what you tried and what happened, and ask them to reach out to the course group with a screenshot.
 
@@ -95,5 +95,5 @@ List the projects I have in Stitch
 | איפה המפתח שהפקודה צריכה | המפתח נשמר ב-Bitwarden בצעד הקודם של היחידה. פותחים את הכספת, שולפים את הרשומה של Stitch, ומדביקים לתוך הפקודה בטרמינל. לא יצרתם עדיין? חוזרים לצעד ה-Bitwarden ויוצרים אותו |
 | הדבקתם בטעות את המפתח בצ'אט | מחליפים אותו: יוצרים מפתח חדש ב-Stitch ‏(בתפריט הפרופיל ← ‏Stitch settings ← ‏API key ← ‏Create key), מוחקים את הישן, מעדכנים את הרשומה ב-Bitwarden, ומריצים שוב את פקודת-החיבור עם החדש |
 | השרת מופיע Failed to connect, או שמופיעה אזהרה על Conflicting scopes | כנראה נשארה רשומת-stitch ישנה או שבורה מניסיון קודם. מריצים `claude mcp list` ובודקים אם stitch מוגדר פעמיים; מוחקים את הרשומה השגויה עם `claude mcp remove stitch -s local` (או `-s user`, לפי מה שהאבחון מציע) ובודקים שוב |
-| השרת לא מופיע אחרי הרישום | השרת נרשם אבל לא נטען. סגרו ופתחו מחדש את Claude Code, וקלוד יזהה את החיבור בהפעלה. אפשר גם לבדוק עם `claude mcp list` שהשרת אכן רשום |
+| השרת לא מופיע אחרי הרישום | השרת נרשם אבל לא נטען. ב-VS Code הקישו Ctrl+Shift+P, בחרו Developer: Reload Window, ופתחו מחדש את פאנל הצ'אט. אם עדיין לא מופיע — סגרו ופתחו את Claude Code. אפשר גם לבדוק עם `claude mcp list` שהשרת אכן רשום |
 | קלוד עונה בלי להשתמש בכלי | נסחו את הבקשה עם השם המפורש "ב-Stitch", וקלוד יפנה אל הכלי |

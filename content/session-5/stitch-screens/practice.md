@@ -2,8 +2,10 @@
 type: practice
 unit: stitch-screens
 session: 5
-phase: home
-num: 4
+phase: הכנה
+num: "5.4"
+parent: content/session-5/stitch-screens/index.html
+parentLabel: מסכים לפלטפורמה שלכם
 title: בבית — מסכים לפלטפורמה שלכם
 studio: [Design]
 video: mI7zfq1fP1o

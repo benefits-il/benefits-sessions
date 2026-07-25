@@ -2,8 +2,10 @@
 type: practice
 unit: bmad-prep
 session: 5
-phase: home
-num: 7
+phase: הכנה
+num: "5.7"
+parent: content/session-5/bmad-prep/index.html
+parentLabel: BMAD — ההסבר של בן
 title: בבית — BMAD, ההסבר של בן
 studio: [Operate]
 video: L4F6LZT_3CU

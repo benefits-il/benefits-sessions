@@ -2,7 +2,10 @@
 type: learning-chapter
 unit: stitch-screens
 session: 5
-phase: home
+phase: הכנה
+num: "5.4"
+parent: content/session-5/stitch-screens/index.html
+parentLabel: מסכים לפלטפורמה שלכם
 title: מסכים לפלטפורמה שלכם — Stitch דרך קלוד קוד, מהמותג למסך
 studio: [Design]
 ---

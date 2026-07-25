@@ -11,7 +11,7 @@ target: Claude Code
 ## מה המסמך הזה
 
 זה לא קובץ שלוחצים עליו. זה מסמך שנותנים לקלוד, וקלוד עושה את העבודה.
-פותחים את Claude Code בתיקייה כלשהי במחשב, מדביקים לקלוד את הקישור למסמך הזה (או את התוכן שלו), ומבקשים ממנו: "תתקין לי לפי המסמך הזה". קלוד קורא את ההנחיות שלמטה, מריץ את מה שצריך, ומלווה אתכם בשלב ההתחברות עם חשבון Google.
+פותחים תיקייה חדשה במחשב (למשל session-5) ופותחים אותה ב-Claude Code — **תיקייה רגילה על המחשב, לא Project בקלוד ולא הצ'אט באתר.** מדביקים לקלוד את הקישור למסמך הזה (או את התוכן שלו), ומבקשים ממנו: "תתקין לי לפי המסמך הזה". קלוד קורא את ההנחיות שלמטה, מריץ את מה שצריך, ומלווה אתכם בשלב ההתחברות עם חשבון Google.
 
 החיבור נכנס ל-Claude Code — אותו מקום שבו תרוצו בכיתה ובהכנות הבאות. לכן ההתקנה כולה נעשית מתוך Claude Code, ולא ידנית.
 
@@ -69,7 +69,7 @@ Proceed as follows:
 
    If anything is marked as unhealthy in `doctor`, fix it according to what it indicates and repeat the step.
 
-6. For the new MCP server to be picked up, you may need to refresh Claude Code's MCP connections (reloading the servers or restarting the session). If the server does not appear in the tools available to you after registration — ask the user to reopen Claude Code.
+6. For the new MCP server to be picked up, you may need to refresh Claude Code's MCP connections (reloading the servers or restarting the session). If the server does not appear in the tools available to you after registration — ask the user to press Ctrl+Shift+P in VS Code, choose `Developer: Reload Window`, and reopen the chat panel. If it still does not appear, ask them to close and reopen Claude Code.
 
 What not to invent: if a particular command fails in a way you do not understand, or the user is on a different operating system than these instructions assume — do not guess. Stop, explain to the user what you tried and what happened, and ask them to reach out to the course group with a screenshot.
 
@@ -102,5 +102,5 @@ List the notebooks I have in NotebookLM
 | קלוד מדווח שהפקודה `nlm` או `notebooklm-mcp` לא נמצאה | ההתקנה לא הושלמה או שהנתיב לא התרענן. בקשו מקלוד לבדוק שוב את ההתקנה, ואם צריך — לפתוח מחדש את הטרמינל ולנסות שוב |
 | חלון ההתחברות ל-Google לא נפתח או נתקע | בקשו מקלוד להריץ שוב `nlm login`; ודאו שאתם מחוברים לחשבון Google הנכון בדפדפן |
 | מחפשים איפה להקליד מפתח API | אין מפתח — NotebookLM מתחבר עם חשבון Google בלבד. זה היופי שלו |
-| קלוד לא רואה את הכלי אחרי ההתקנה | השרת נרשם אבל לא נטען. פתחו מחדש את Claude Code, וקלוד יזהה את החיבור בהפעלה |
+| קלוד לא רואה את הכלי אחרי ההתקנה | השרת נרשם אבל לא נטען. ב-VS Code הקישו Ctrl+Shift+P, בחרו Developer: Reload Window, ופתחו מחדש את פאנל הצ'אט. אם עדיין לא מופיע — סגרו ופתחו את Claude Code |
 | קלוד עונה בלי להשתמש בכלי | נסחו את הבקשה עם השם המפורש "ב-NotebookLM", וקלוד יפנה אל הכלי |

@@ -2,7 +2,10 @@
 type: summary
 unit: stitch-screens
 session: 5
-phase: home
+phase: הכנה
+num: "5.4"
+parent: content/session-5/stitch-screens/index.html
+parentLabel: מסכים לפלטפורמה שלכם
 title: מסכים לפלטפורמה שלכם — Google Stitch דרך קלוד קוד
 studio: [Design]
 ---
